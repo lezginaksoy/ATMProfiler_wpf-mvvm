@@ -29,7 +29,7 @@ namespace ATMDesigner.UI
 {
     public partial class ViewModelDesignerCanvas
     {
-        #region daha sonra kullanılabilir
+        #region 
         //public static RoutedCommand Group = new RoutedCommand();
         //public static RoutedCommand Ungroup = new RoutedCommand();
         //public static RoutedCommand BringForward = new RoutedCommand();
@@ -56,7 +56,7 @@ namespace ATMDesigner.UI
         public ViewModelDesignerCanvas()
         { 
             
-            #region daha sonra kullanılabilir
+            #region 
             //this.CommandBindings.Add(new CommandBinding(DesignerCanvas.Group, Group_Executed, Group_Enabled));
             //this.CommandBindings.Add(new CommandBinding(DesignerCanvas.Ungroup, Ungroup_Executed, Ungroup_Enabled));
             //this.CommandBindings.Add(new CommandBinding(DesignerCanvas.BringForward, BringForward_Executed, Order_Enabled));
@@ -276,7 +276,7 @@ namespace ATMDesigner.UI
                 pbw.Close();
                 return;
             }
-            if (MessageBoxResult.No == MessageBox.Show("Değişiklikleri kaydetmek istediğinize emin misiniz?", "ATM State Designer", MessageBoxButton.YesNo))
+            if (MessageBoxResult.No == MessageBox.Show("are you sure !", "ATM State Designer", MessageBoxButton.YesNo))
             {
                 pbw.Close();
                 return;
@@ -290,7 +290,7 @@ namespace ATMDesigner.UI
             XElement connectionsXML = SerializeConnections(connections);
             if (designerItemsXML==null ||connectionsXML==null)
             {
-                MessageBox.Show("designerItemsXML veya connectionsXML parsing hatası", "XML Hatası", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("designerItemsXML or connectionsXML parsing error", "XML error", MessageBoxButton.OK, MessageBoxImage.Error);
                 pbw.Close();
                 return;
             }
@@ -307,20 +307,20 @@ namespace ATMDesigner.UI
                 int RetVal = StateBusiness.SaveProject(this.TransactionList, this.ProjectName, this.avaliableStateNumberList[0].ToString(), StateIdListFromProjectUpload);
                 if (RetVal == 100)
                 {
-                    log.Info("Save_Executed(), işlem Başarı ile tamamlandı.!");
-                    MessageBox.Show("Kayıt işlemi başarılı bir şekilde yapıldı.!", "Kayıt işlemi", MessageBoxButton.OK, MessageBoxImage.Information);
+                    log.Info("Save_Executed(),Completed!");
+                    MessageBox.Show("completed !", "registry", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 else
                 {
-                    log.Error("Save_Executed() Hata.! Transactionlar DB'ye başarılı bir şekilde kaydedilemedi. Sayı:"+this.TransactionList.Count);
-                    MessageBox.Show("Transactionlar DB'ye başarılı bir şekilde kaydedilemedi.!", "State Hatası", MessageBoxButton.OK, MessageBoxImage.Error);
+                    log.Error("Save_Executed() error.! error count:"+this.TransactionList.Count);
+                    MessageBox.Show("Transactions error.!", "State error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
 
             }
             else
             {
-                log.Error("Save_Executed() hata.! XML Dosyaları kaydedilemedi.! ");
-                MessageBox.Show("XML Arayüzlerinde parsing hatası", "XML Hatası", MessageBoxButton.OK, MessageBoxImage.Error);
+                log.Error("Save_Executed() XML files error.! ");
+                MessageBox.Show("XML parsing ", "XML error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
             pbw.Close();
@@ -332,7 +332,7 @@ namespace ATMDesigner.UI
 
         public void Transfer_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            if (MessageBoxResult.No == MessageBox.Show("Değişiklikler Asıl tabloya aktarılacaktır,Devam etmek istediğinize emin misiniz?", "State tablo Aktarımı", MessageBoxButton.YesNo))
+            if (MessageBoxResult.No == MessageBox.Show("are you sure?", "State table import", MessageBoxButton.YesNo))
                 return;
 
             Dispatcher.BeginInvoke(DispatcherPriority.Input, new ThreadStart(() =>
