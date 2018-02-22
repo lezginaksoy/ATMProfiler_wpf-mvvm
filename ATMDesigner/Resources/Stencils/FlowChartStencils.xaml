@@ -1,0 +1,1111 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:s="clr-namespace:ATMDesigner.UI"
+                    xmlns:c="clr-namespace:ATMDesigner.UI.Controls">
+
+  <!--<Brush x:Key="ItemStroke">#FFD69436</Brush>
+  <LinearGradientBrush x:Key="ItemBrush" StartPoint="0,0" EndPoint="0,1">
+    <LinearGradientBrush.GradientStops>
+      <GradientStop Color="#FAFBE9" Offset="0" />
+      <GradientStop Color="Orange" Offset="1" />
+    </LinearGradientBrush.GradientStops>
+  </LinearGradientBrush>
+
+  <Brush x:Key="ItemStroke1">#ACADCD</Brush>
+  <LinearGradientBrush x:Key="ItemBrush1" StartPoint="0,0" EndPoint="0,1" >
+    <GradientStop Color="#FEFEFE" Offset="0"/>
+    <GradientStop Color="#BDBEDE" Offset="1"/>
+  </LinearGradientBrush>-->
+
+
+  <!--<Style x:Key="FlowChartItemStyle" TargetType="Path">
+    <Setter Property="Fill" Value="{StaticResource ItemBrush}"/>
+    <Setter Property="Stroke" Value="{StaticResource ItemStroke}"/>
+    <Setter Property="StrokeThickness" Value="1"/>
+    <Setter Property="StrokeLineJoin" Value="Round"/>
+    <Setter Property="Stretch" Value="Fill"/>
+    <Setter Property="IsHitTestVisible" Value="False"/>
+    <Setter Property="SnapsToDevicePixels" Value="True"/>
+    <Setter Property="BitmapEffect">
+      <Setter.Value>
+        <DropShadowBitmapEffect Color="#AAA" Direction="315" ShadowDepth="7"
+                                Softness="0.5" Opacity="0.6"/>
+      </Setter.Value>
+    </Setter>
+  </Style>-->
+
+  <!-- Process -->
+  <!--<Style x:Key="Process" TargetType="Path" BasedOn="{StaticResource FlowChartItemStyle}">
+    <Setter Property="Data" Value="M 0,0 H 60 V40 H 0 Z"/>
+  </Style>
+
+  <Style x:Key="Process_DragThumb" TargetType="Path" BasedOn="{StaticResource Process}">
+    <Setter Property="IsHitTestVisible" Value="true"/>
+    <Setter Property="Fill" Value="Transparent"/>
+    <Setter Property="Stroke" Value="Transparent"/>
+  </Style>-->
+
+   
+
+    <s:ViewModelToolbox x:Key="FlowChartStencils" ItemSize="65,60"  SnapsToDevicePixels="False"  
+             ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Visible"
+                        BorderBrush="Black" BorderThickness="2">
+        <ItemsControl.Items>
+            
+            <!--GENERIC-->
+            <!--A State-->
+            <DockPanel Margin="1.5" IsHitTestVisible="False" Tag="A" ToolTip="GENERIC" Background="BurlyWood">                
+                <Border CornerRadius="2" DockPanel.Dock="Top" Height="21" BorderBrush="Gray" Background="Azure" BorderThickness="1,1,1,0">
+                    <Label DockPanel.Dock="Top" FontStyle="Normal" FontWeight="Bold"  FontSize="9" HorizontalContentAlignment="Center" Content="A State" VerticalAlignment="Top" Background="Aqua"></Label>
+                </Border>
+
+                <Border DockPanel.Dock="Left"  BorderBrush="Gray"  BorderThickness="1,0,0,1">
+                    <StackPanel  Grid.Column="0" Margin="0,0,0,0" Width="38"   DockPanel.Dock="Left">
+                        <Button Content="A" Tag="GoodReadNextState" Background="Blue" FontWeight="Bold" FontSize="6"/>                        
+                    </StackPanel>
+                </Border>
+
+                <Border  DockPanel.Dock="Right"  BorderBrush="Gray"  BorderThickness="0,0,1,1">
+                    <StackPanel Grid.Column="0" Margin="0,0,0,0" Width="38"   DockPanel.Dock="Right">
+                        <Button Content="B" Tag="NoFITMatchNextState" Background="Red" FontWeight="Bold" FontSize="6"/>
+                    </StackPanel>
+                </Border>
+
+                <s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+                    <ControlTemplate>
+                        <c:RelativePositionPanel Margin="-4">
+                            <s:ViewModelConnector Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main" c:RelativePositionPanel.RelativePosition="0.5,0"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="GoodReadNextState" ToolTip="GoodReadNextState"  Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.38"/>
+                            <s:ViewModelConnector Orientation="Right" Tag="NoFITMatchNextState" ToolTip="NoFITMatchNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.38"/>
+                        </c:RelativePositionPanel>
+                    </ControlTemplate>
+                </s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+            </DockPanel>
+            <!--GENERIC-->
+            <!--B State-->
+            <DockPanel Margin="1.5" IsHitTestVisible="False" Tag="B"  ToolTip="GENERIC" Background="Azure">
+              
+                <Border CornerRadius="2" DockPanel.Dock="Top" Height="21" BorderBrush="Gray" Background="Azure" BorderThickness="1,1,1,0">
+                    <Label DockPanel.Dock="Top" FontStyle="Normal" FontWeight="Bold"  FontSize="9" HorizontalContentAlignment="Center" Content="B State" VerticalAlignment="Top" Background="Aqua"></Label>
+                </Border>
+
+                <Border DockPanel.Dock="Left"  BorderBrush="Gray" Background="Azure" BorderThickness="1,0,0,1">
+                    <StackPanel  Grid.Column="0" Margin="0,0,0,0" Width="38"   DockPanel.Dock="Left">
+                        <Button Content="A" FontWeight="Bold" FontSize="6"  Tag="TimeoutNextState" Background="Blue" />
+                        <Button Content="C" FontWeight="Bold" FontSize="6" Tag="LocalPINCheckGoodPINNextState" Background="Aquamarine" />
+                        <Button Content="F" FontWeight="Bold"  FontSize="6" Tag="RemotePINCheckNextState" Background="Coral" />
+                    </StackPanel>
+                </Border>
+
+                <Border DockPanel.Dock="Right"  BorderBrush="Gray" Background="Azure" BorderThickness="0,0,1,1">
+                    <StackPanel  Grid.Column="0" Margin="0,0,0,0" Width="38" DockPanel.Dock="Right">
+                        <Button Content="B" FontWeight="Bold" FontSize="6" Tag="CancelNextState" Background="Red" />
+                        <Button Content="D" FontWeight="Bold" FontSize="6" Tag="LocalPINCheckMaximumBadPINsNextState" Background="Azure"/>                        
+                    </StackPanel>
+                </Border>
+                
+                <s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+                    <ControlTemplate>
+                        <c:RelativePositionPanel Margin="-4">
+                            <s:ViewModelConnector Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main" c:RelativePositionPanel.RelativePosition="0.5,0"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="TimeoutNextState" ToolTip="TimeoutNextState"  Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.38"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="LocalPINCheckGoodPINNextState" ToolTip="LocalPINCheckGoodPINNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.55"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="RemotePINCheckNextState" ToolTip="RemotePINCheckNextState" Height="12" Width="10" c:RelativePositionPanel.RelativePosition="0,0.74"/>
+                           
+                            <s:ViewModelConnector Orientation="Right"  Tag="CancelNextState" ToolTip="CancelNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.38"/>
+                            <s:ViewModelConnector Orientation="Right" Tag="LocalPINCheckMaximumBadPINsNextState" ToolTip="LocalPINCheckMaximumBadPINsNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.55"/>
+                        </c:RelativePositionPanel>
+                    </ControlTemplate>
+                </s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+            </DockPanel>
+            <!--GENERIC-->
+            <!--D State-->
+            <DockPanel Margin="1.5" IsHitTestVisible="False" ToolTip="GENERIC" Background="Gray" Tag="D">
+             
+                <Border CornerRadius="2" DockPanel.Dock="Top" Height="21" BorderBrush="Gray" Background="Azure" BorderThickness="1,1,1,0">
+                    <Label DockPanel.Dock="Top" FontStyle="Normal" FontWeight="Bold"  FontSize="9" HorizontalContentAlignment="Center" Content="D State" VerticalAlignment="Top" Background="Aqua"></Label>
+                </Border>
+
+                <Border  CornerRadius="2" DockPanel.Dock="Left"  BorderBrush="Gray"  BorderThickness="1,0,0,1">
+                    <StackPanel  Grid.Column="0" Margin="0,0,0,0" Width="38"   DockPanel.Dock="Left">
+                        <Button Content="A" Tag="NextState" Background="Blue" FontWeight="Bold" FontSize="6"/>
+                    </StackPanel>
+                </Border>
+
+                <Border CornerRadius="2" DockPanel.Dock="Right"  BorderBrush="Gray"  BorderThickness="0,0,1,1">
+                    <StackPanel  Grid.Column="0" Margin="0,0,0,0">
+                    </StackPanel>
+                </Border>
+
+                <s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+                    <ControlTemplate>
+                        <c:RelativePositionPanel Margin="-4">
+                            <s:ViewModelConnector Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main" c:RelativePositionPanel.RelativePosition="0.5,0"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="NextState" ToolTip="NextState"  Height="12" Width="12" c:RelativePositionPanel.RelativePosition="0,0.38"/>
+                        </c:RelativePositionPanel>
+                    </ControlTemplate>
+                </s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+
+            </DockPanel>
+            <!--GENERIC-->
+            <!--E State-->
+            <DockPanel Margin="1.5" IsHitTestVisible="False" Tag="E"  ToolTip="GENERIC" Background="CadetBlue" >
+
+                <Border CornerRadius="2" DockPanel.Dock="Top" Height="21" BorderBrush="Gray" Background="Azure" BorderThickness="1,1,1,0">
+                    <Label DockPanel.Dock="Top" FontStyle="Normal" FontWeight="Bold"  FontSize="9" HorizontalContentAlignment="Center" Content="E State" VerticalAlignment="Top" Background="Aqua"></Label>
+                </Border>
+
+                <Border DockPanel.Dock="Left"  BorderBrush="Gray" Background="Azure" BorderThickness="1,0,0,1">
+                    <StackPanel  Grid.Column="0" Margin="0,0,0,0" Width="38"   DockPanel.Dock="Left">
+                        <Button Content="A" FontWeight="Bold" FontSize="6" Tag="FDK_A_NextState" Background="Blue" />
+                        <Button Content="C" FontWeight="Bold" FontSize="6" Tag="FDK_C_NextState" Background="Aquamarine" />
+                        <Button Content="F" FontWeight="Bold"  FontSize="6" Tag="TimeoutNextState" Background="Coral" />
+                    </StackPanel>
+                </Border>
+
+                <Border DockPanel.Dock="Right"  BorderBrush="Gray" Background="Azure" BorderThickness="0,0,1,1">
+                    <StackPanel  Grid.Column="0" Margin="0,0,0,0" Width="38" DockPanel.Dock="Right">
+                        <Button Content="B" FontWeight="Bold" FontSize="6" Tag="FDK_B_NextState" Background="Red" />
+                        <Button Content="D" FontWeight="Bold" FontSize="6" Tag="FDK_D_NextState" Background="Azure"/>
+                        <Button Content="G" FontWeight="Bold" FontSize="6" Tag="CancelNextState" Background="Aqua" />
+                    </StackPanel>
+                </Border>
+
+
+                <s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+                    <ControlTemplate>
+                        <c:RelativePositionPanel Margin="-4">
+                            <s:ViewModelConnector Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main" c:RelativePositionPanel.RelativePosition="0.5,0"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="FDK_A_NextState" ToolTip="FDK_A_NextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.38"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="FDK_C_NextState" ToolTip="FDK_C_NextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.55"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="TimeoutNextState" ToolTip="TimeoutNextState"  Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.74"/>
+
+                            <s:ViewModelConnector Orientation="Right"  Tag="FDK_B_NextState" ToolTip="FDK_B_NextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.38"/>
+                            <s:ViewModelConnector Orientation="Right" Tag="FDK_D_NextState" ToolTip="FDK_D_NextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.55"/>
+                            <s:ViewModelConnector Orientation="Right" Tag="CancelNextState" ToolTip="CancelNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.74"/>
+
+                        </c:RelativePositionPanel>
+                    </ControlTemplate>
+                </s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+            </DockPanel>
+            <!--GENERIC-->
+            <!--F State-->
+            <DockPanel Margin="1.5" IsHitTestVisible="False" Tag="F"  ToolTip="GENERIC" Background="Firebrick" >
+
+                <Border CornerRadius="2" DockPanel.Dock="Top" Height="21" BorderBrush="Gray" Background="Azure" BorderThickness="1,1,1,0">
+                    <Label DockPanel.Dock="Top" FontStyle="Normal" FontWeight="Bold"  FontSize="9" HorizontalContentAlignment="Center" Content="F State" VerticalAlignment="Top" Background="Aqua"></Label>
+                </Border>
+
+                <Border DockPanel.Dock="Left"  BorderBrush="Gray" Background="Azure" BorderThickness="1,0,0,1">
+                    <StackPanel  Grid.Column="0" Margin="0,0,0,0" Width="38"   DockPanel.Dock="Left">
+                        <Button Content="A" FontWeight="Bold" FontSize="6" Tag="FDK_A_NextState" Background="Blue" />
+                        <Button Content="C" FontWeight="Bold" FontSize="6" Tag="FDK_C_NextState" Background="Aquamarine" />
+                        <Button Content="F" FontWeight="Bold"  FontSize="6" Tag="TimeoutNextState" Background="Coral" />
+                    </StackPanel>
+                </Border>
+
+                <Border DockPanel.Dock="Right"  BorderBrush="Gray" Background="Azure" BorderThickness="0,0,1,1">
+                    <StackPanel  Grid.Column="0" Margin="0,0,0,0" Width="38" DockPanel.Dock="Right">
+                        <Button Content="B" FontWeight="Bold" FontSize="6" Tag="FDK_B_NextState" Background="Red" />
+                        <Button Content="D" FontWeight="Bold" FontSize="6" Tag="FDK_D_NextState" Background="Azure"/>
+                        <Button Content="G" FontWeight="Bold" FontSize="6" Tag="CancelNextState" Background="Aqua" />
+                    </StackPanel>
+                </Border>
+
+
+                <s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+                    <ControlTemplate>
+                        <c:RelativePositionPanel Margin="-4">
+                            <s:ViewModelConnector Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main" c:RelativePositionPanel.RelativePosition="0.5,0"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="FDK_A_NextState" ToolTip="FDK_A_NextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.38"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="FDK_C_NextState" ToolTip="FDK_C_NextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.55"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="TimeoutNextState" ToolTip="TimeoutNextState"  Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.74"/>
+
+                            <s:ViewModelConnector Orientation="Right"  Tag="FDK_B_NextState" ToolTip="FDK_B_NextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.38"/>
+                            <s:ViewModelConnector Orientation="Right" Tag="FDK_D_NextState" ToolTip="FDK_D_NextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.55"/>
+                            <s:ViewModelConnector Orientation="Right" Tag="CancelNextState" ToolTip="CancelNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.74"/>
+
+                        </c:RelativePositionPanel>
+                    </ControlTemplate>
+                </s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+            </DockPanel>
+            <!--GENERIC-->
+            <!--H State-->
+            <DockPanel Margin="1.5" IsHitTestVisible="False" Tag="H"  ToolTip="GENERIC" Background="YellowGreen" >
+              
+                <Border CornerRadius="2" DockPanel.Dock="Top" Height="21" BorderBrush="Gray" Background="Azure" BorderThickness="1,1,1,0">
+                    <Label DockPanel.Dock="Top" FontStyle="Normal" FontWeight="Bold"  FontSize="8" HorizontalContentAlignment="Center" Content="H State" VerticalAlignment="Top" Background="Aqua"></Label>
+                </Border>
+
+                <Border DockPanel.Dock="Left"  BorderBrush="Gray" Background="Azure" BorderThickness="1,0,0,1">
+                    <StackPanel  Grid.Column="0" Margin="0,0,0,0" Width="38"   DockPanel.Dock="Left">
+                        <Button Content="A" FontWeight="Bold" FontSize="6" Tag="FDK_A_NextState" Background="Blue" />
+                        <Button Content="C" FontWeight="Bold" FontSize="6" Tag="FDK_C_NextState" Background="Aquamarine" />
+                        <Button Content="F" FontWeight="Bold"  FontSize="6" Tag="TimeoutNextState" Background="Coral" />                      
+                    </StackPanel>
+                </Border>
+
+                <Border DockPanel.Dock="Right"  BorderBrush="Gray" Background="Azure" BorderThickness="0,0,1,1">
+                    <StackPanel  Grid.Column="0" Margin="0,0,0,0" Width="38" DockPanel.Dock="Right">
+                        <Button Content="B" FontWeight="Bold" FontSize="6" Tag="FDK_B_NextState" Background="Red" />
+                        <Button Content="D" FontWeight="Bold" FontSize="6" Tag="FDK_D_NextState" Background="Azure"/>
+                        <Button Content="G" FontWeight="Bold" FontSize="6" Tag="CancelNextState" Background="Aqua" />                    
+                    </StackPanel>
+                </Border>
+
+
+                <s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+                    <ControlTemplate>
+                        <c:RelativePositionPanel Margin="-4">
+                            <s:ViewModelConnector Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main" c:RelativePositionPanel.RelativePosition="0.5,0"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="FDK_A_NextState" ToolTip="FDK_A_NextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.38"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="FDK_C_NextState" ToolTip="FDK_C_NextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.55"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="TimeoutNextState" ToolTip="TimeoutNextState"  Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.74"/>
+                           
+                            <s:ViewModelConnector Orientation="Right"  Tag="FDK_B_NextState" ToolTip="FDK_B_NextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.38"/>
+                            <s:ViewModelConnector Orientation="Right" Tag="FDK_D_NextState" ToolTip="FDK_D_NextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.55"/>
+                            <s:ViewModelConnector Orientation="Right" Tag="CancelNextState" ToolTip="CancelNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.74"/>
+                          
+                        </c:RelativePositionPanel>
+                    </ControlTemplate>
+                </s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+            </DockPanel>
+            <!--GENERIC-->
+            <!--I State-->
+            <DockPanel Margin="1.5" IsHitTestVisible="False" Tag="I" ToolTip="GENERIC" Background="Yellow" >
+                <Border CornerRadius="2" DockPanel.Dock="Top" Height="21" BorderBrush="Gray" Background="Azure" BorderThickness="1,1,1,0">
+                    <Label DockPanel.Dock="Top" FontStyle="Normal" FontWeight="Bold"  FontSize="9" HorizontalContentAlignment="Center" Content="I State" VerticalAlignment="Top" Background="Aqua"></Label>
+                </Border>
+
+                <Border  CornerRadius="2" DockPanel.Dock="Left"  BorderBrush="Gray"  BorderThickness="1,0,0,1">
+                    <StackPanel  Grid.Column="0" Margin="0,0,0,0" Width="38"   DockPanel.Dock="Left">
+                        <Button Content="A" Tag="TimeoutNextState" Background="Blue" FontWeight="Bold" FontSize="6"/>
+                    </StackPanel>
+                </Border>
+
+                <Border CornerRadius="2" DockPanel.Dock="Right"  BorderBrush="Gray"  BorderThickness="0,0,1,1">
+                    <StackPanel  Grid.Column="0" Margin="0,0,0,0">                     
+                    </StackPanel>
+                </Border>
+
+                <s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+                    <ControlTemplate>
+                        <c:RelativePositionPanel Margin="-4">
+                            <s:ViewModelConnector Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main" c:RelativePositionPanel.RelativePosition="0.5,0"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="TimeoutNextState" ToolTip="TimeoutNextState"  Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.38"/>
+                        </c:RelativePositionPanel>
+                    </ControlTemplate>
+                </s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+            </DockPanel>
+            <!--GENERIC-->
+            <!--J State-->
+            <DockPanel Margin="1.5" IsHitTestVisible="False" Tag="J" ToolTip="GENERIC" Background="WhiteSmoke" >
+                <Border CornerRadius="2" DockPanel.Dock="Top" Height="21" BorderBrush="Gray" Background="Azure" BorderThickness="1,1,1,0">
+                    <Label DockPanel.Dock="Top" FontStyle="Normal" FontWeight="Bold"  FontSize="9" HorizontalContentAlignment="Center" Content="J State" VerticalAlignment="Top" Background="Aqua"></Label>
+                </Border>
+
+                <Border  CornerRadius="2" DockPanel.Dock="Left"  BorderBrush="Gray"  BorderThickness="1,0,0,1">
+                    <StackPanel  Grid.Column="0" Margin="0,0,0,0" Width="38"   DockPanel.Dock="Left">
+                        <Button Content="A" Tag="NextState" Background="Blue" FontWeight="Bold" FontSize="6"/>
+                    </StackPanel>
+                </Border>
+
+                <Border CornerRadius="2" DockPanel.Dock="Right"  BorderBrush="Gray"  BorderThickness="0,0,1,1">
+                    <StackPanel  Grid.Column="0" Margin="0,0,0,0">
+                    </StackPanel>
+                </Border>
+
+                <s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+                    <ControlTemplate>
+                        <c:RelativePositionPanel Margin="-4">
+                            <s:ViewModelConnector Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main" c:RelativePositionPanel.RelativePosition="0.5,0"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="NextState" ToolTip="NextState"  Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.38"/>
+                        </c:RelativePositionPanel>
+                    </ControlTemplate>
+                </s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+            </DockPanel>
+            <!--GENERIC-->
+            <!--K State-->
+            <DockPanel Margin="1.5" IsHitTestVisible="False" Tag="K"  ToolTip="GENERIC" Background="Gray" >
+                          
+                <Border CornerRadius="2" DockPanel.Dock="Top" Height="21" BorderBrush="Gray" Background="Azure" BorderThickness="1,1,1,0">                  
+                        <Label DockPanel.Dock="Top" FontStyle="Normal" FontWeight="Bold"  FontSize="9" HorizontalContentAlignment="Center" Content="K State" VerticalAlignment="Top" Background="Aqua"></Label>
+               </Border>
+                <Border DockPanel.Dock="Left"  BorderBrush="Gray" Background="Azure" BorderThickness="1,0,0,1">
+                    <StackPanel  Grid.Column="0" Margin="0,0,0,0" Width="38"   DockPanel.Dock="Left">
+                        <Button Content="A" FontWeight="Bold" FontSize="6" Tag="NextState0" Background="Blue" />
+                        <Button Content="C" FontWeight="Bold" FontSize="6" Tag="NextState2" Background="Aquamarine" />
+                        <Button Content="F" FontWeight="Bold"  FontSize="6" Tag="NextState4" Background="Beige" />
+                        <Button Content="H" FontWeight="Bold" FontSize="6" Tag="NextState6" Background="Beige" />
+                    </StackPanel>
+                </Border>
+
+                <Border DockPanel.Dock="Right"  BorderBrush="Gray" Background="Azure" BorderThickness="0,0,1,1">
+                    <StackPanel  Grid.Column="0" Margin="0,0,0,0" Width="38" DockPanel.Dock="Right">
+                        <Button Content="B" FontWeight="Bold" FontSize="6" Tag="NextState1" Background="Red" />
+                        <Button Content="D" FontWeight="Bold" FontSize="6" Tag="NextState3" Background="Azure"/>
+                        <Button Content="G" FontWeight="Bold" FontSize="6" Tag="NextState5" Background="Azure" />
+                        <Button Content="I" FontWeight="Bold" FontSize="6" Tag="NextState7" Background="Beige" />
+               </StackPanel>
+                </Border>
+                
+                <s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+                    <ControlTemplate>
+                        <c:RelativePositionPanel Margin="-4">
+                            <s:ViewModelConnector Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main" c:RelativePositionPanel.RelativePosition="0.5,0"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="NextState0" ToolTip="NextState0"  Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.38"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="NextState2" ToolTip="NextState2" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.55"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="NextState4" ToolTip="NextState4" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.74"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="NextState6" ToolTip="NextState6" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.93"/>
+
+                            <s:ViewModelConnector Orientation="Right"  Tag="NextState1" ToolTip="NextState1" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.38"/>
+                            <s:ViewModelConnector Orientation="Right" Tag="NextState3" ToolTip="NextState3" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.55"/>
+                            <s:ViewModelConnector Orientation="Right" Tag="NextState5" ToolTip="NextState5" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.74"/>
+                            <s:ViewModelConnector Orientation="Right" Tag="NextState7" ToolTip="NextState7" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.93"/>
+
+                        </c:RelativePositionPanel>
+                    </ControlTemplate>
+                </s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+            </DockPanel>
+            <!--GENERIC-->
+            <!--k State-->
+            <DockPanel Margin="1.5" IsHitTestVisible="False" Tag="k"  ToolTip="GENERIC" Background="Ivory">
+                
+                <Border CornerRadius="2" DockPanel.Dock="Top" Height="21" BorderBrush="Gray" Background="Azure" BorderThickness="1,1,1,0">
+                    <Label DockPanel.Dock="Top" FontStyle="Normal" FontWeight="Bold"  FontSize="9" HorizontalContentAlignment="Center" Content="k State" VerticalAlignment="Top" Background="Aqua"></Label>
+                </Border>
+
+                <Border  CornerRadius="2" DockPanel.Dock="Left"  BorderBrush="Gray"  BorderThickness="1,0,0,1">
+                    <StackPanel  Grid.Column="0" Margin="0,0,0,0" Width="38"   DockPanel.Dock="Left">
+                        <Button Content="A" Tag="NextState" Background="Blue" FontWeight="Bold" FontSize="6"/>                      
+                    </StackPanel>
+                </Border>
+
+                <Border CornerRadius="2" DockPanel.Dock="Right"  BorderBrush="Gray"  BorderThickness="0,0,1,1">
+                    <StackPanel  Grid.Column="0" Margin="0,0,0,0">
+                        <Button Content="B" Tag="NoFitMatchNextState" Background="Red" FontWeight="Bold" FontSize="6"/>
+                    </StackPanel>
+                </Border>
+
+                <s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+                    <ControlTemplate>
+                        <c:RelativePositionPanel Margin="-4">
+                            <s:ViewModelConnector Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main" c:RelativePositionPanel.RelativePosition="0.5,0"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="NextState" ToolTip="NextState"  Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.38"/>
+                            <s:ViewModelConnector Orientation="Right" Tag="NoFitMatchNextState" ToolTip="NoFitMatchNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.38"/>
+                        </c:RelativePositionPanel>
+                    </ControlTemplate>
+                </s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+            </DockPanel>
+            <!--GENERIC-->
+            <!--W State-->
+            <DockPanel Margin="1.5" IsHitTestVisible="False" Tag="W" ToolTip="GENERIC" Background="GreenYellow">
+
+                <Border CornerRadius="2" DockPanel.Dock="Top" Height="21" BorderBrush="Gray" Background="Azure" BorderThickness="1,1,1,0">
+                    <Label DockPanel.Dock="Top" FontStyle="Normal" FontWeight="Bold"  FontSize="8" HorizontalContentAlignment="Center" Content="W State" VerticalAlignment="Top" Background="Aqua"></Label>
+                </Border>
+
+                <Border DockPanel.Dock="Left"  BorderBrush="Gray" Background="Azure" BorderThickness="1,0,0,1">
+                    <StackPanel  Grid.Column="0" Margin="0,0,0,0" Width="38"   DockPanel.Dock="Left">
+                        <Button Content="A" FontWeight="Bold" FontSize="6" Tag="FDK_A_NextState" Background="Blue" />
+                        <Button Content="C" FontWeight="Bold" FontSize="6" Tag="FDK_C_NextState" Background="Aquamarine" />
+                        <Button Content="F" FontWeight="Bold"  FontSize="6" Tag="FDK_F_NextState" Background="Coral" />
+                        <Button Content="H" FontWeight="Bold" FontSize="6" Tag="FDK_H_NextState" Background="Beige" />
+                    </StackPanel>
+                </Border>
+
+                <Border DockPanel.Dock="Right"  BorderBrush="Gray" Background="Azure" BorderThickness="0,0,1,1">
+                    <StackPanel  Grid.Column="0" Margin="0,0,0,0" Width="38" DockPanel.Dock="Right">
+                        <Button Content="B" FontWeight="Bold" FontSize="6" Tag="FDK_B_NextState" Background="Red" />
+                        <Button Content="D" FontWeight="Bold" FontSize="6" Tag="FDK_D_NextState" Background="Azure"/>
+                        <Button Content="G" FontWeight="Bold" FontSize="6" Tag="FDK_G_NextState" Background="Aqua" />
+                        <Button Content="I" FontWeight="Bold" FontSize="6" Tag="FDK_I_NextStatext" Background="Beige" />
+                    </StackPanel>
+                </Border>
+               
+                <s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+                    <ControlTemplate>
+                        <c:RelativePositionPanel Margin="-4">
+                            <s:ViewModelConnector Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main" c:RelativePositionPanel.RelativePosition="0.5,0"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="FDK_A_NextState" ToolTip="FDK_A_NextState"  Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.38"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="FDK_C_NextState" ToolTip="FDK_C_NextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.55"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="FDK_F_NextState" ToolTip="FDK_F_NextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.74"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="FDK_H_NextState" ToolTip="FDK_H_NextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.93"/>
+
+                            <s:ViewModelConnector Orientation="Right"  Tag="FDK_B_NextState" ToolTip="FDK_B_NextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.38"/>
+                            <s:ViewModelConnector Orientation="Right" Tag="FDK_D_NextState" ToolTip="FDK_D_NextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.55"/>
+                            <s:ViewModelConnector Orientation="Right" Tag="FDK_G_NextState" ToolTip="FDK_G_NextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.74"/>
+                            <s:ViewModelConnector Orientation="Right" Tag="FDK_I_NextState" ToolTip="FDK_I_NextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.93"/>
+
+                        </c:RelativePositionPanel>
+                    </ControlTemplate>
+                </s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+            </DockPanel>
+            <!--GENERIC-->
+            <!--X State-->
+            <DockPanel Margin="1.5" IsHitTestVisible="False" Tag="X" ToolTip="GENERIC" Background="AntiqueWhite">
+                
+                <Border CornerRadius="2" DockPanel.Dock="Top" Height="21" BorderBrush="Gray" Background="Azure" BorderThickness="1,1,1,0">
+                    <Label DockPanel.Dock="Top" FontStyle="Normal" FontWeight="Bold"  FontSize="9" HorizontalContentAlignment="Center" Content="X State" VerticalAlignment="Top" Background="Aqua"></Label>
+                </Border>
+
+                <Border  CornerRadius="2" DockPanel.Dock="Left"  BorderBrush="Gray"  BorderThickness="1,0,0,1">
+                    <StackPanel  Grid.Column="0" Margin="0,0,0,0" Width="38"   DockPanel.Dock="Left">
+                        <Button Content="A" Tag="TimeoutNextState" Background="Blue" FontWeight="Bold" FontSize="6"/>
+                        <Button Content="C" Tag="FDKNextState" Background="Aquamarine" FontWeight="Bold" FontSize="6"/>
+                    </StackPanel>
+                </Border>
+
+                <Border CornerRadius="2" DockPanel.Dock="Right"  BorderBrush="Gray"  BorderThickness="0,0,1,1">
+                    <StackPanel  Grid.Column="0" Margin="0,0,0,0">                                         
+                        <Button Content="B" Tag="CancelNextState" Background="Red" FontWeight="Bold" FontSize="6"/>                       
+                    </StackPanel>
+                </Border>
+                
+                <s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+                    <ControlTemplate>
+
+                        <c:RelativePositionPanel Margin="-4">
+                            <s:ViewModelConnector Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main" c:RelativePositionPanel.RelativePosition="0.5,0"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="TimeoutNextState" ToolTip="TimeoutNextState"  Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.38"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="CancelNextState" ToolTip="CancelNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.55"/>
+                          
+                            <s:ViewModelConnector Orientation="Right" Tag="FDKNextState" ToolTip="FDKNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.38"/>
+
+                        </c:RelativePositionPanel>
+                    </ControlTemplate>
+                </s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+            </DockPanel>
+            <!--GENERIC-->
+            <!--Y State-->
+            <DockPanel Margin="1.5" IsHitTestVisible="False" Tag="Y" ToolTip="GENERIC" Background="LightCyan">
+                <Border CornerRadius="2" DockPanel.Dock="Top" Height="21" BorderBrush="Gray" Background="Azure" BorderThickness="1,1,1,0">
+                    <Label DockPanel.Dock="Top" FontStyle="Normal" FontWeight="Bold"  FontSize="9" HorizontalContentAlignment="Center" Content="Y State" VerticalAlignment="Top" Background="Aqua"></Label>
+                </Border>
+
+                <Border DockPanel.Dock="Left"  BorderBrush="Gray"  BorderThickness="1,0,0,1">
+                    <StackPanel  Grid.Column="0" Margin="0,0,0,0" Width="38"   DockPanel.Dock="Left">
+                        <Button Content="A" Tag="TimeoutNextState" Background="Blue" FontWeight="Bold" FontSize="6"/>
+                        <Button Content="C" Tag="FDKNextState" Background="Cyan" FontWeight="Bold" FontSize="6"/>
+                    </StackPanel>
+                </Border>
+
+                <Border  DockPanel.Dock="Right"  BorderBrush="Gray"  BorderThickness="0,0,1,1">
+                    <StackPanel Grid.Column="0" Margin="0,0,0,0" Width="38"   DockPanel.Dock="Right">
+                        <Button Content="B" Tag="CancelNextState" Background="Red" FontWeight="Bold" FontSize="6"/>                     
+                    </StackPanel>
+                </Border>
+                
+                <s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+                    <ControlTemplate>
+                        <c:RelativePositionPanel Margin="-4">
+                            <s:ViewModelConnector Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main"  c:RelativePositionPanel.RelativePosition="0.5,0"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="TimeoutNextState" ToolTip="TimeoutNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.38"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="FDKNextState" ToolTip="FDKNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.55"/>
+                          
+                            <s:ViewModelConnector Orientation="Right" Tag="CancelNextState" ToolTip="CancelNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.38"/>
+                        </c:RelativePositionPanel>
+                    </ControlTemplate>
+                </s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+            </DockPanel>
+            <!--GENERIC-->
+            <!--b State-->
+            <DockPanel Margin="1.5" IsHitTestVisible="False" Tag="b" ToolTip="GENERIC" Background="SeaShell">
+                <Border CornerRadius="2" DockPanel.Dock="Top" Height="21" BorderBrush="Gray" Background="Azure" BorderThickness="1,1,1,0">
+                    <Label DockPanel.Dock="Top" FontStyle="Normal" FontWeight="Bold"  FontSize="9" HorizontalContentAlignment="Center" Content="b State" VerticalAlignment="Top" Background="Aqua"></Label>
+                </Border>
+
+                <Border DockPanel.Dock="Left"  BorderBrush="Gray"  BorderThickness="1,0,0,1">
+                    <StackPanel  Grid.Column="0" Margin="0,0,0,0" Width="38"   DockPanel.Dock="Left">
+                        <Button Content="A" Tag="TimeoutNextState" Background="Blue" FontWeight="Bold" FontSize="6"/>
+                        <Button Content="C" Tag="CancelNextState" Background="Red" FontWeight="Bold" FontSize="6"/>
+                   </StackPanel>
+                </Border>
+                <Border  DockPanel.Dock="Right"  BorderBrush="Gray"  BorderThickness="0,0,1,1">
+                    <StackPanel Grid.Column="0" Margin="0,0,0,0" Width="38"   DockPanel.Dock="Right">
+                        <Button Content="B" Tag="GoodNextState" Background="Green" FontWeight="Bold" FontSize="6"/>
+                        <Button Content="D" Tag="CSPFailNextState" Background="Red" FontWeight="Bold" FontSize="6"/>
+                    </StackPanel>
+                </Border>
+
+                <s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+                    <ControlTemplate>
+                        <c:RelativePositionPanel Margin="-4">
+                            <s:ViewModelConnector Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main"  c:RelativePositionPanel.RelativePosition="0.5,0"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="TimeoutNextState" ToolTip="TimeoutNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.38"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="CancelNextState" ToolTip="ErrorNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.55"/>
+                         
+                            <s:ViewModelConnector Orientation="Right" Tag="GoodNextState" ToolTip="GoodNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.38"/>
+                            <s:ViewModelConnector Orientation="Right" Tag="CSPFailNextState" ToolTip="CSPFailNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.55"/>
+
+                        </c:RelativePositionPanel>
+                    </ControlTemplate>
+                </s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+            </DockPanel>
+
+            
+            <!--NCR-->
+            <!--CAS State-->
+            <DockPanel Margin="1.5" IsHitTestVisible="False" Tag="CAS" ToolTip="NCR" Background="RosyBrown">
+                <Border CornerRadius="2" DockPanel.Dock="Top" Height="21" BorderBrush="Gray" Background="Azure" BorderThickness="1,1,1,0">
+                    <Label DockPanel.Dock="Top" FontStyle="Normal" FontWeight="Bold"  FontSize="9" HorizontalContentAlignment="Center" 
+                           Content="> State" VerticalAlignment="Top" Background="SeaGreen"></Label>
+                </Border>
+
+                <Border DockPanel.Dock="Left"  BorderBrush="Gray"  BorderThickness="1,0,0,1">
+                    <StackPanel  Grid.Column="0" Margin="0,0,0,0" Width="38"   DockPanel.Dock="Left">
+                        <Button Content="A" Tag="GoodNextState" Background="Wheat" FontWeight="Bold" FontSize="6"/>
+                        <Button Content="C" Tag="DeviceErrorNextState" Background="Wheat" FontWeight="Bold" FontSize="6"/>
+                        <Button Content="F" Tag="RefundSlotNextState" FontWeight="Bold"  FontSize="6"  Background="Wheat" />
+                    </StackPanel>
+                </Border>
+                <Border  DockPanel.Dock="Right"  BorderBrush="Gray"  BorderThickness="0,0,1,1">
+                    <StackPanel Grid.Column="0" Margin="0,0,0,0" Width="38"   DockPanel.Dock="Right">
+                        <Button Content="B" Tag="CancelNextState" Background="Wheat" FontWeight="Bold" FontSize="6"/>
+                        <Button Content="D" Tag="TimeoutNextState" Background="Wheat" FontWeight="Bold" FontSize="6"/>                     
+                    </StackPanel>
+                </Border>
+
+                <s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+                    <ControlTemplate>
+                        <c:RelativePositionPanel Margin="-4">
+                            <s:ViewModelConnector Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main"  c:RelativePositionPanel.RelativePosition="0.5,0"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="GoodNextState" ToolTip="GoodNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.38"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="DeviceErrorNextState" ToolTip="DeviceErrorNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.55"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="RefundSlotNextState" ToolTip="RefundSlotNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.74"/>
+
+                            <s:ViewModelConnector Orientation="Right" Tag="CancelNextState" ToolTip="CancelNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.38"/>
+                            <s:ViewModelConnector Orientation="Right" Tag="TimeoutNextState" ToolTip="TimeoutNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.55"/>
+
+                        </c:RelativePositionPanel>
+                    </ControlTemplate>
+                </s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+            </DockPanel>
+            <!--NCR-->
+            <!-- + State-->
+            <DockPanel Margin="1.5" IsHitTestVisible="False" Tag="Plus" ToolTip="NCR" Background="SeaShell">
+                <Border CornerRadius="2" DockPanel.Dock="Top" Height="21" BorderBrush="Gray" Background="Azure" BorderThickness="1,1,1,0">
+                    <Label DockPanel.Dock="Top" FontStyle="Normal" FontWeight="Bold"  FontSize="9" HorizontalContentAlignment="Center" 
+                           Content="+ State" VerticalAlignment="Top" Background="SeaGreen"></Label>
+                </Border>
+
+                <Border DockPanel.Dock="Left"  BorderBrush="Gray"  BorderThickness="1,0,0,1">
+                    <StackPanel  Grid.Column="0" Margin="0,0,0,0" Width="38"   DockPanel.Dock="Left">
+                        <Button Content="A" Tag="ICCInitStartedNextState" Background="Blue" FontWeight="Bold" FontSize="6"/>
+                  </StackPanel>
+                </Border>
+                <Border  DockPanel.Dock="Right"  BorderBrush="Gray"  BorderThickness="0,0,1,1">
+                    <StackPanel Grid.Column="0" Margin="0,0,0,0" Width="38"   DockPanel.Dock="Right">
+                        <Button Content="B" Tag="ICCInitNotStartedNextState" Background="Green" FontWeight="Bold" FontSize="6"/>
+                  </StackPanel>
+                </Border>
+
+                <s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+                    <ControlTemplate>
+                        <c:RelativePositionPanel Margin="-4">
+                            <s:ViewModelConnector Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main"  c:RelativePositionPanel.RelativePosition="0.5,0"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="ICCInitStartedNextState" ToolTip="ICCInitStartedNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.38"/>
+                         
+                            <s:ViewModelConnector Orientation="Right" Tag="ICCInitNotStartedNextState" ToolTip="ICCInitNotStartedNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.38"/>
+                         
+                        </c:RelativePositionPanel>
+                    </ControlTemplate>
+                </s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+            </DockPanel>
+            <!--NCR-->
+            <!-- , State-->
+            <DockPanel Margin="1.5" IsHitTestVisible="False" Tag="Comma" ToolTip="NCR" Background="SeaShell">
+                <Border CornerRadius="2" DockPanel.Dock="Top" Height="21" BorderBrush="Gray" Background="Azure" BorderThickness="1,1,1,0">
+                    <Label DockPanel.Dock="Top" FontStyle="Normal" FontWeight="Bold"  FontSize="9" HorizontalContentAlignment="Center" 
+                           Content=", State" VerticalAlignment="Top" Background="SeaGreen"></Label>
+                </Border>
+                <Border DockPanel.Dock="Left"  BorderBrush="Gray"  BorderThickness="1,0,0,1">
+                    <StackPanel  Grid.Column="0" Margin="0,0,0,0" Width="38"   DockPanel.Dock="Left">
+                        <Button Content="A" Tag="ICCInitSuccessfulNextState" Background="Blue" FontWeight="Bold" FontSize="6"/>
+                        <Button Content="C" Tag="NoUsableAppNextState" Background="Red" FontWeight="Bold" FontSize="6"/>
+                        <Button Content="F" Tag="ICCHardLevelErrorNextState" Background="Red" FontWeight="Bold" FontSize="6"/>
+                    </StackPanel>
+                </Border>
+                <Border  DockPanel.Dock="Right"  BorderBrush="Gray"  BorderThickness="0,0,1,1">
+                    <StackPanel Grid.Column="0" Margin="0,0,0,0" Width="38"   DockPanel.Dock="Right">
+                        <Button Content="B" Tag="CardNotSmartNextState" Background="Green" FontWeight="Bold" FontSize="6"/>
+                        <Button Content="D" Tag="ICCAppLevelErrorNextState" Background="Red" FontWeight="Bold" FontSize="6"/>
+                    </StackPanel>
+                </Border>
+
+                <s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+                    <ControlTemplate>
+                        <c:RelativePositionPanel Margin="-4">
+                            <s:ViewModelConnector Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main"  c:RelativePositionPanel.RelativePosition="0.5,0"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="ICCInitSuccessfulNextState" ToolTip="ICCInitSuccessfulNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.38"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="NoUsableAppNextState" ToolTip="NoUsableAppNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.55"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="ICCHardLevelErrorNextState" ToolTip="ICCHardLevelErrorNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.74"/>
+
+                            <s:ViewModelConnector Orientation="Right" Tag="CardNotSmartNextState" ToolTip="CardNotSmartNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.38"/>
+                            <s:ViewModelConnector Orientation="Right" Tag="ICCAppLevelErrorNextState" ToolTip="ICCAppLevelErrorNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.55"/>
+
+                        </c:RelativePositionPanel>
+                    </ControlTemplate>
+                </s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+            </DockPanel>
+            <!--NCR-->
+            <!-- - State-->
+            <DockPanel Margin="1.5" IsHitTestVisible="False" Tag="Dash" ToolTip="NCR" Background="SeaShell">
+                <Border CornerRadius="2" DockPanel.Dock="Top" Height="21" BorderBrush="Gray" Background="Azure" BorderThickness="1,1,1,0">
+                    <Label DockPanel.Dock="Top" FontStyle="Normal" FontWeight="Bold"  FontSize="9" HorizontalContentAlignment="Center" 
+                           Content="- State" VerticalAlignment="Top" Background="SeaGreen"></Label>
+                </Border>
+
+                <Border DockPanel.Dock="Left"  BorderBrush="Gray"  BorderThickness="1,0,0,1">
+                    <StackPanel  Grid.Column="0" Margin="0,0,0,0" Width="38"   DockPanel.Dock="Left">
+                        <Button Content="A" Tag="LanguageMatchNextState" Background="Blue" FontWeight="Bold" FontSize="6"/>
+                    </StackPanel>
+                </Border>
+                <Border  DockPanel.Dock="Right"  BorderBrush="Gray"  BorderThickness="0,0,1,1">
+                    <StackPanel Grid.Column="0" Margin="0,0,0,0" Width="38"   DockPanel.Dock="Right">
+                        <Button Content="B" Tag="NoLanguageMatchNextState" Background="Green" FontWeight="Bold" FontSize="6"/>
+                    </StackPanel>
+                </Border>
+
+                <s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+                    <ControlTemplate>
+                        <c:RelativePositionPanel Margin="-4">
+                            <s:ViewModelConnector Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main"  c:RelativePositionPanel.RelativePosition="0.5,0"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="LanguageMatchNextState" ToolTip="LanguageMatchNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.38"/>
+
+                            <s:ViewModelConnector Orientation="Right" Tag="NoLanguageMatchNextState" ToolTip="NoLanguageMatchNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.38"/>
+                      
+                        </c:RelativePositionPanel>
+                    </ControlTemplate>
+                </s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+            </DockPanel>
+            <!--NCR-->
+            <!-- . State-->
+            <DockPanel Margin="1.5" IsHitTestVisible="False" Tag="Dot" ToolTip="NCR" Background="RosyBrown">
+                <Border CornerRadius="2" DockPanel.Dock="Top" Height="21" BorderBrush="Gray" Background="Azure" BorderThickness="1,1,1,0">
+                    <Label DockPanel.Dock="Top" FontStyle="Normal" FontWeight="Bold"  FontSize="9" HorizontalContentAlignment="Center" 
+                           Content=". State" VerticalAlignment="Top" Background="SeaGreen"></Label>
+                </Border>
+
+                <Border DockPanel.Dock="Left"  BorderBrush="Gray"  BorderThickness="1,0,0,1">
+                    <StackPanel  Grid.Column="0" Margin="0,0,0,0" Width="38"   DockPanel.Dock="Left">
+                        <Button Content="A" Tag="TimeOutNextState" Background="Wheat" FontWeight="Bold" FontSize="6"/>
+                        <Button Content="C" Tag="CancelKeyNextState" Background="Wheat" FontWeight="Bold" FontSize="6"/>
+                        <Button Content="F" Tag="CardholderAppNextState" FontWeight="Bold"  FontSize="6"  Background="Wheat" />
+                    </StackPanel>
+                </Border>
+                <Border  DockPanel.Dock="Right"  BorderBrush="Gray"  BorderThickness="0,0,1,1">
+                    <StackPanel Grid.Column="0" Margin="0,0,0,0" Width="38"   DockPanel.Dock="Right">
+                        <Button Content="B" Tag="AppAutomaticallyNextState" Background="Wheat" FontWeight="Bold" FontSize="6"/>
+                        <Button Content="D" Tag="NoUsableAppNextState" Background="Wheat" FontWeight="Bold" FontSize="6"/>
+                    </StackPanel>
+                </Border>
+
+                <s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+                    <ControlTemplate>
+                        <c:RelativePositionPanel Margin="-4">
+                            <s:ViewModelConnector Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main"  c:RelativePositionPanel.RelativePosition="0.5,0"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="TimeOutNextState" ToolTip="TimeOutNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.38"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="CancelKeyNextState" ToolTip="CancelKeyNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.55"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="CardholderAppNextState" ToolTip="CardholderAppNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.74"/>
+
+                            <s:ViewModelConnector Orientation="Right" Tag="AppAutomaticallyNextState" ToolTip="AppAutomaticallyNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.38"/>
+                            <s:ViewModelConnector Orientation="Right" Tag="NoUsableAppNextState" ToolTip="NoUsableAppNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.55"/>
+
+                        </c:RelativePositionPanel>
+                    </ControlTemplate>
+                </s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+            </DockPanel>
+            <!--NCR-->
+            <!-- / State-->
+            <DockPanel Margin="1.5" IsHitTestVisible="False" Tag="Slash" ToolTip="NCR" Background="GreenYellow">
+                <Border CornerRadius="2" DockPanel.Dock="Top" Height="21" BorderBrush="Gray" Background="Azure" BorderThickness="1,1,1,0">
+                    <Label DockPanel.Dock="Top" FontStyle="Normal" FontWeight="Bold"  FontSize="8" HorizontalContentAlignment="Center" 
+                           Content="/ State" VerticalAlignment="Top" Background="SeaGreen"></Label>
+                </Border>
+
+                <Border DockPanel.Dock="Left"  BorderBrush="Gray" Background="Azure" BorderThickness="1,0,0,1">
+                    <StackPanel  Grid.Column="0" Margin="0,0,0,0" Width="38"   DockPanel.Dock="Left">
+                        <Button Content="A" FontWeight="Bold" FontSize="6" Tag="ICCAppSuccessfulNextState" Background="Blue" />
+                        <Button Content="C" FontWeight="Bold" FontSize="6" Tag="CardNotSmartNextState" Background="Aquamarine" />
+                        <Button Content="F" FontWeight="Bold"  FontSize="6" Tag="ICCAppNotUsableNextState" Background="Coral" />
+                        <Button Content="H" FontWeight="Bold" FontSize="6" Tag="NoSuitableICCAppsNextState" Background="Beige" />
+                    </StackPanel>
+                </Border>
+
+                <Border DockPanel.Dock="Right"  BorderBrush="Gray" Background="Azure" BorderThickness="0,0,1,1">
+                    <StackPanel  Grid.Column="0" Margin="0,0,0,0" Width="38" DockPanel.Dock="Right">
+                        <Button Content="B" FontWeight="Bold" FontSize="6" Tag="ICCAppLevelErrorNextState" Background="Red" />
+                        <Button Content="D" FontWeight="Bold" FontSize="6" Tag="ICCHardwareLevelErrorNextState" Background="Azure"/>
+                        <Button Content="G" FontWeight="Bold" FontSize="6" Tag="ProcessNotPerformNextState" Background="Aqua" />
+                    </StackPanel>
+                </Border>
+
+                <s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+                    <ControlTemplate>
+                        <c:RelativePositionPanel Margin="-4">
+                            <s:ViewModelConnector Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main" c:RelativePositionPanel.RelativePosition="0.5,0"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="ICCAppSuccessfulNextState" ToolTip="ICCAppSuccessfulNextState"  Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.38"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="CardNotSmartNextState" ToolTip="CardNotSmartNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.55"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="ICCAppNotUsableNextState" ToolTip="ICCAppNotUsableNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.74"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="NoSuitableICCAppsNextState" ToolTip="NoSuitableICCAppsNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.93"/>
+
+                            <s:ViewModelConnector Orientation="Right"  Tag="ICCAppLevelErrorNextState" ToolTip="ICCAppLevelErrorNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.38"/>
+                            <s:ViewModelConnector Orientation="Right" Tag="ICCHardwareLevelErrorNextState" ToolTip="ICCHardwareLevelErrorNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.55"/>
+                            <s:ViewModelConnector Orientation="Right" Tag="ProcessNotPerformNextState" ToolTip="ProcessNotPerformNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.74"/>
+
+                        </c:RelativePositionPanel>
+                    </ControlTemplate>
+                </s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+            </DockPanel>
+            <!--NCR-->
+            <!-- ? State-->
+            <DockPanel Margin="1.5" IsHitTestVisible="False" Tag="Query" ToolTip="NCR" Background="GreenYellow">
+                <Border CornerRadius="2" DockPanel.Dock="Top" Height="21" BorderBrush="Gray" Background="Azure" BorderThickness="1,1,1,0">
+                    <Label DockPanel.Dock="Top" FontStyle="Normal" FontWeight="Bold"  FontSize="8" HorizontalContentAlignment="Center" 
+                           Content="? State" VerticalAlignment="Top" Background="SeaGreen"></Label>
+                </Border>
+
+                <Border DockPanel.Dock="Left"  BorderBrush="Gray" Background="Azure" BorderThickness="1,0,0,1">
+                    <StackPanel  Grid.Column="0" Margin="0,0,0,0" Width="38"   DockPanel.Dock="Left">
+                        <Button Content="A" FontWeight="Bold" FontSize="6" Tag="NextState" Background="Blue" />
+                      
+                    </StackPanel>
+                </Border>
+
+                <Border DockPanel.Dock="Right"  BorderBrush="Gray" Background="Azure" BorderThickness="0,0,1,1">
+                    <StackPanel  Grid.Column="0" Margin="0,0,0,0" Width="38" DockPanel.Dock="Right">
+                      
+                    </StackPanel>
+                </Border>
+
+                <s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+                    <ControlTemplate>
+                        <c:RelativePositionPanel Margin="-4">
+                            <s:ViewModelConnector Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main" c:RelativePositionPanel.RelativePosition="0.5,0"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="NextState" ToolTip="NextState"  Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.38"/>
+                      
+                        </c:RelativePositionPanel>
+                    </ControlTemplate>
+                </s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+            </DockPanel>
+            <!--NCR-->
+            <!-- ; State-->
+            <DockPanel Margin="1.5" IsHitTestVisible="False" Tag="Semicolon" ToolTip="NCR" Background="GreenYellow">
+                <Border CornerRadius="2" DockPanel.Dock="Top" Height="21" BorderBrush="Gray" Background="Azure" BorderThickness="1,1,1,0">
+                    <Label DockPanel.Dock="Top" FontStyle="Normal" FontWeight="Bold"  FontSize="8" HorizontalContentAlignment="Center" 
+                           Content="; State" VerticalAlignment="Top" Background="SeaGreen"></Label>
+                </Border>
+
+                <Border DockPanel.Dock="Left"  BorderBrush="Gray" Background="Azure" BorderThickness="1,0,0,1">
+                    <StackPanel  Grid.Column="0" Margin="0,0,0,0" Width="38"   DockPanel.Dock="Left">
+                        <Button Content="A" FontWeight="Bold" FontSize="6" Tag="GoodNextState" Background="Blue" />
+
+                    </StackPanel>
+                </Border>
+
+                <Border DockPanel.Dock="Right"  BorderBrush="Gray" Background="Azure" BorderThickness="0,0,1,1">
+                    <StackPanel  Grid.Column="0" Margin="0,0,0,0" Width="38" DockPanel.Dock="Right">
+                        <Button Content="B" Tag="ProcessingNotPerformedNextState" Background="Green" FontWeight="Bold" FontSize="6"/>
+                    </StackPanel>
+                </Border>
+
+                <s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+                    <ControlTemplate>
+                        <c:RelativePositionPanel Margin="-4">
+                            <s:ViewModelConnector Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main" c:RelativePositionPanel.RelativePosition="0.5,0"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="GoodNextState" ToolTip="GoodNextState"  Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.38"/>
+
+                            <s:ViewModelConnector Orientation="Right" Tag="ProcessingNotPerformedNextState" ToolTip="ProcessingNotPerformedNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.38"/>
+
+                        </c:RelativePositionPanel>
+                    </ControlTemplate>
+                </s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+            </DockPanel>
+
+
+            <!--WINCOR-->
+            <!--Cash In wincor (r State) -->
+            <DockPanel Margin="1.5" IsHitTestVisible="False" Tag="r" ToolTip="WINCOR" Background="Salmon">
+                <Border CornerRadius="2" DockPanel.Dock="Top" Height="21" BorderBrush="Gray" Background="Indigo" BorderThickness="1,1,1,0">
+                    <Label DockPanel.Dock="Top" FontStyle="Normal" FontWeight="Bold"  FontSize="8" HorizontalContentAlignment="Center" 
+                           Content="r State" VerticalAlignment="Top" Background="Yellow"></Label>
+                </Border>
+
+                <Border DockPanel.Dock="Left"  BorderBrush="Gray"  BorderThickness="1,0,0,1">
+                    <StackPanel  Grid.Column="0" Margin="0,0,0,0" Width="38"   DockPanel.Dock="Left">
+                        <Button Content="A" Tag="OKNextState" Background="Peru" FontWeight="Bold" FontSize="6"/>
+                        <Button Content="C" Tag="ErrorNextState" Background="Peru" FontWeight="Bold" FontSize="6"/>
+                        <Button Content="F" Tag="CashCapturedNextState" Background="Peru" FontWeight="Bold"  FontSize="6"   />
+                    </StackPanel>
+                </Border>
+                <Border  DockPanel.Dock="Right"  BorderBrush="Gray"  BorderThickness="0,0,1,1">
+                    <StackPanel Grid.Column="0" Margin="0,0,0,0" Width="38"   DockPanel.Dock="Right">
+                        <Button Content="B" Tag="CancelAndESCROWEmptyNextState" Background="Peru" FontWeight="Bold" FontSize="6"/>
+                        <Button Content="D" Tag="TimeoutNextState" Background="Peru" FontWeight="Bold" FontSize="6"/>
+                    </StackPanel>
+                </Border>
+
+                <s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+                    <ControlTemplate>
+                        <c:RelativePositionPanel Margin="-4">
+                            <s:ViewModelConnector Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main"  c:RelativePositionPanel.RelativePosition="0.5,0"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="OKNextState" ToolTip="OKNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.38"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="ErrorNextState" ToolTip="ErrorNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.55"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="CashCapturedNextState" ToolTip="CashCapturedNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.74"/>
+
+                            <s:ViewModelConnector Orientation="Right" Tag="CancelAndESCROWEmptyNextState" ToolTip="CancelAndESCROWEmptyNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.38"/>
+                            <s:ViewModelConnector Orientation="Right" Tag="TimeoutNextState" ToolTip="TimeoutNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.55"/>
+
+                        </c:RelativePositionPanel>
+                    </ControlTemplate>
+                </s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+            </DockPanel>
+            <!--WINCOR-->
+            <!--EMV wincor e (e000 State) -->
+            <DockPanel Margin="1.5" IsHitTestVisible="False" Tag="e000" ToolTip="WINCOR" Background="Salmon">
+                <Border CornerRadius="2" DockPanel.Dock="Top" Height="21" BorderBrush="Gray" Background="Indigo" BorderThickness="1,1,1,0">
+                    <Label DockPanel.Dock="Top" FontStyle="Normal" FontWeight="Bold"  FontSize="8" HorizontalContentAlignment="Center" 
+                           Content="e000 State" VerticalAlignment="Top" Background="Yellow"></Label>
+                </Border>
+
+                <Border DockPanel.Dock="Left"  BorderBrush="Gray"  BorderThickness="1,0,0,1">
+                    <StackPanel  Grid.Column="0" Margin="0,0,0,0" Width="38"   DockPanel.Dock="Left">
+                        <Button Content="A" Tag="SuccessfulNextstate" Background="Peru" FontWeight="Bold" FontSize="6"/>
+                        <Button Content="C" Tag="FailedContactingNextState" Background="Peru" FontWeight="Bold" FontSize="6"/>
+                        <Button Content="F" Tag="NoAppAvaliableNextState" Background="Peru" FontWeight="Bold"  FontSize="6"   />
+                    </StackPanel>
+                </Border>
+                <Border  DockPanel.Dock="Right"  BorderBrush="Gray"  BorderThickness="0,0,1,1">
+                    <StackPanel Grid.Column="0" Margin="0,0,0,0" Width="38"   DockPanel.Dock="Right">
+                        <Button Content="B" Tag="EMVAppLevelErrorNextState" Background="Peru" FontWeight="Bold" FontSize="6"/>
+                        <Button Content="D" Tag="EMVHardwareErrorNextState" Background="Peru" FontWeight="Bold" FontSize="6"/>
+                    </StackPanel>
+                </Border>
+
+                <s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+                    <ControlTemplate>
+                        <c:RelativePositionPanel Margin="-4">
+                            <s:ViewModelConnector Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main"  c:RelativePositionPanel.RelativePosition="0.5,0"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="SuccessfulNextstate" ToolTip="SuccessfulNextstate" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.38"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="FailedContactingNextState" ToolTip="FailedContactingNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.55"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="NoAppAvaliableNextState" ToolTip="NoAppAvaliableNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.74"/>
+
+                            <s:ViewModelConnector Orientation="Right" Tag="EMVAppLevelErrorNextState" ToolTip="EMVAppLevelErrorNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.38"/>
+                            <s:ViewModelConnector Orientation="Right" Tag="EMVHardwareErrorNextState" ToolTip="EMVHardwareErrorNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.55"/>
+
+                        </c:RelativePositionPanel>
+                    </ControlTemplate>
+                </s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+            </DockPanel>
+            <!--WINCOR-->
+            <!--EMV wincor e (e001 State) -->
+            <DockPanel Margin="1.5" IsHitTestVisible="False" Tag="e001" ToolTip="WINCOR" Background="Salmon">
+                <Border CornerRadius="2" DockPanel.Dock="Top" Height="21" BorderBrush="Gray" Background="Indigo" BorderThickness="1,1,1,0">
+                    <Label DockPanel.Dock="Top" FontStyle="Normal" FontWeight="Bold"  FontSize="8" HorizontalContentAlignment="Center" 
+                           Content="e001 State" VerticalAlignment="Top" Background="Yellow"></Label>
+                </Border>
+
+                <Border DockPanel.Dock="Left"  BorderBrush="Gray"  BorderThickness="1,0,0,1">
+                    <StackPanel  Grid.Column="0" Margin="0,0,0,0" Width="38"   DockPanel.Dock="Left">
+                        <Button Content="A" Tag="AppSelectedNextstate" Background="Peru" FontWeight="Bold" FontSize="6"/>
+                        <Button Content="C" Tag="OneAppAvaliableNextState" Background="Peru" FontWeight="Bold" FontSize="6"/>
+                        <Button Content="F" Tag="NoAppAvaliableNextState" Background="Peru" FontWeight="Bold"  FontSize="6"   />
+                    </StackPanel>
+                </Border>
+                <Border  DockPanel.Dock="Right"  BorderBrush="Gray"  BorderThickness="0,0,1,1">
+                    <StackPanel Grid.Column="0" Margin="0,0,0,0" Width="38"   DockPanel.Dock="Right">
+                        <Button Content="B" Tag="TimeoutNextState" Background="Peru" FontWeight="Bold" FontSize="6"/>
+                        <Button Content="D" Tag="CancelNextState" Background="Peru" FontWeight="Bold" FontSize="6"/>
+                    </StackPanel>
+                </Border>
+
+                <s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+                    <ControlTemplate>
+                        <c:RelativePositionPanel Margin="-4">
+                            <s:ViewModelConnector Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main"  c:RelativePositionPanel.RelativePosition="0.5,0"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="AppSelectedNextstate" ToolTip="AppSelectedNextstate" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.38"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="OneAppAvaliableNextState" ToolTip="OneAppAvaliableNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.55"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="NoAppAvaliableNextState" ToolTip="NoAppAvaliableNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.74"/>
+
+                            <s:ViewModelConnector Orientation="Right" Tag="TimeoutNextState" ToolTip="TimeoutNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.38"/>
+                            <s:ViewModelConnector Orientation="Right" Tag="CancelNextState" ToolTip="CancelNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.55"/>
+
+                        </c:RelativePositionPanel>
+                    </ControlTemplate>
+                </s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+            </DockPanel>
+            <!--WINCOR-->
+            <!--EMV wincor e (e002 State) -->
+            <DockPanel Margin="1.5" IsHitTestVisible="False" Tag="e002" ToolTip="WINCOR" Background="Salmon">
+                <Border CornerRadius="2" DockPanel.Dock="Top" Height="21" BorderBrush="Gray" Background="Indigo" BorderThickness="1,1,1,0">
+                    <Label DockPanel.Dock="Top" FontStyle="Normal" FontWeight="Bold"  FontSize="8" HorizontalContentAlignment="Center" 
+                           Content="e002 State" VerticalAlignment="Top" Background="Yellow"></Label>
+                </Border>
+
+                <Border DockPanel.Dock="Left"  BorderBrush="Gray"  BorderThickness="1,0,0,1">
+                    <StackPanel  Grid.Column="0" Margin="0,0,0,0" Width="38"   DockPanel.Dock="Left">
+                        <Button Content="A" Tag="AppStartedNextstate" Background="Peru" FontWeight="Bold" FontSize="6"/>
+                        <Button Content="C" Tag="AppNotStartedNextState" Background="Peru" FontWeight="Bold" FontSize="6"/>
+                    </StackPanel>
+                </Border>
+                <Border  DockPanel.Dock="Right"  BorderBrush="Gray"  BorderThickness="0,0,1,1">
+                    <StackPanel Grid.Column="0" Margin="0,0,0,0" Width="38"   DockPanel.Dock="Right">
+                        <Button Content="B" Tag="EMVAppErrorNextState" Background="Peru" FontWeight="Bold" FontSize="6"/>
+                        <Button Content="D" Tag="EMVHardwareErrorNextState" Background="Peru" FontWeight="Bold" FontSize="6"/>
+                    </StackPanel>
+                </Border>
+
+                <s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+                    <ControlTemplate>
+                        <c:RelativePositionPanel Margin="-4">
+                            <s:ViewModelConnector Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main"  c:RelativePositionPanel.RelativePosition="0.5,0"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="AppStartedNextstate" ToolTip="AppStartedNextstate" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.38"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="AppNotStartedNextState" ToolTip="AppNotStartedNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.55"/>
+
+                            <s:ViewModelConnector Orientation="Right" Tag="EMVAppErrorNextState" ToolTip="EMVAppErrorNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.38"/>
+                            <s:ViewModelConnector Orientation="Right" Tag="EMVHardwareErrorNextState" ToolTip="EMVHardwareErrorNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.55"/>
+
+                        </c:RelativePositionPanel>
+                    </ControlTemplate>
+                </s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+            </DockPanel>
+            <!--WINCOR-->
+            <!--EMV wincor e (e003 State) -->
+            <DockPanel Margin="1.5" IsHitTestVisible="False" Tag="e003" ToolTip="WINCOR" Background="Salmon">
+                <Border CornerRadius="2" DockPanel.Dock="Top" Height="21" BorderBrush="Gray" Background="Indigo" BorderThickness="1,1,1,0">
+                    <Label DockPanel.Dock="Top" FontStyle="Normal" FontWeight="Bold"  FontSize="8" HorizontalContentAlignment="Center" 
+                           Content="e003 State" VerticalAlignment="Top" Background="Yellow"></Label>
+                </Border>
+
+                <Border DockPanel.Dock="Left"  BorderBrush="Gray"  BorderThickness="1,0,0,1">
+                    <StackPanel  Grid.Column="0" Margin="0,0,0,0" Width="38"   DockPanel.Dock="Left">
+                        <Button Content="A" Tag="Nextstate" Background="Peru" FontWeight="Bold" FontSize="6"/>
+                   </StackPanel>
+                </Border>
+                <Border  DockPanel.Dock="Right"  BorderBrush="Gray"  BorderThickness="0,0,1,1">
+                    <StackPanel Grid.Column="0" Margin="0,0,0,0" Width="38"   DockPanel.Dock="Right">
+                    </StackPanel>
+                </Border>
+
+                <s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+                    <ControlTemplate>
+                        <c:RelativePositionPanel Margin="-4">
+                            <s:ViewModelConnector Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main"  c:RelativePositionPanel.RelativePosition="0.5,0"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="Nextstate" ToolTip="Nextstate" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.38"/>
+
+                        </c:RelativePositionPanel>
+                    </ControlTemplate>
+                </s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+            </DockPanel>
+            <!--WINCOR-->
+            <!--EMV wincor e (e004 State) -->
+            <DockPanel Margin="1.5" IsHitTestVisible="False" Tag="e004" ToolTip="WINCOR" Background="Salmon">
+                <Border CornerRadius="2" DockPanel.Dock="Top" Height="21" BorderBrush="Gray" Background="Indigo" BorderThickness="1,1,1,0">
+                    <Label DockPanel.Dock="Top" FontStyle="Normal" FontWeight="Bold"  FontSize="8" HorizontalContentAlignment="Center" 
+                           Content="e004 State" VerticalAlignment="Top" Background="Yellow"></Label>
+                </Border>
+
+                <Border DockPanel.Dock="Left"  BorderBrush="Gray"  BorderThickness="1,0,0,1">
+                    <StackPanel  Grid.Column="0" Margin="0,0,0,0" Width="38"   DockPanel.Dock="Left">
+                        <Button Content="A" Tag="FirstACSuccessfulNextstate" Background="Peru" FontWeight="Bold" FontSize="6"/>
+                        <Button Content="C" Tag="FirstACDeclinedNextstate" Background="Peru" FontWeight="Bold" FontSize="6"/>
+                        <Button Content="F" Tag="ChipReferralNextstate" Background="Peru" FontWeight="Bold"  FontSize="6"/>
+                        <Button Content="H" Tag="NoAppStartedNextstate" Background="Peru" FontWeight="Bold"  FontSize="6" />
+                    </StackPanel>
+                </Border>
+                <Border  DockPanel.Dock="Right"  BorderBrush="Gray"  BorderThickness="0,0,1,1">
+                    <StackPanel Grid.Column="0" Margin="0,0,0,0" Width="38"   DockPanel.Dock="Right">
+                        <Button Content="B" Tag="EMVAppErrorNextstate" Background="Peru" FontWeight="Bold" FontSize="6"/>
+                        <Button Content="D" Tag="EMVHardwareErrorNextstate" Background="Peru" FontWeight="Bold" FontSize="6"/>
+                        <Button Content="G" Tag="EMVSequenceErrorNextstate" Background="Peru" FontWeight="Bold" FontSize="6" />
+                    </StackPanel>
+                </Border>
+
+                <s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+                    <ControlTemplate>
+                        <c:RelativePositionPanel Margin="-4">
+                            <s:ViewModelConnector Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main"  c:RelativePositionPanel.RelativePosition="0.5,0"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="FirstACSuccessfulNextstate" ToolTip="FirstACSuccessfulNextstate" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.38"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="FirstACDeclinedNextstate" ToolTip="FirstACDeclinedNextstate" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.55"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="ChipReferralNextstate" ToolTip="ChipReferralNextstate" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.74"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="NoAppStartedNextstate" ToolTip="NoAppStartedNextstate" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.93"/>
+
+                            <s:ViewModelConnector Orientation="Right" Tag="EMVAppErrorNextstate" ToolTip="EMVAppErrorNextstate" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.38"/>
+                            <s:ViewModelConnector Orientation="Right" Tag="EMVHardwareErrorNextstate" ToolTip="EMVHardwareErrorNextstate" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.55"/>
+                            <s:ViewModelConnector Orientation="Right" Tag="EMVSequenceErrorNextstate" ToolTip="EMVSequenceErrorNextstate" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.74"/>
+
+                        </c:RelativePositionPanel>
+                    </ControlTemplate>
+                </s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+            </DockPanel>
+            <!--WINCOR-->
+            <!--EMV wincor e (e005 State) -->
+            <DockPanel Margin="1.5" IsHitTestVisible="False" Tag="e005" ToolTip="WINCOR" Background="Salmon">
+                <Border CornerRadius="2" DockPanel.Dock="Top" Height="21" BorderBrush="Gray" Background="Indigo" BorderThickness="1,1,1,0">
+                    <Label DockPanel.Dock="Top"  FontStyle="Normal" FontWeight="Bold"  FontSize="8" HorizontalContentAlignment="Center" 
+                           Content="e005 State" VerticalAlignment="Top" Background="Yellow"></Label>
+                </Border>
+
+                <Border DockPanel.Dock="Left"  BorderBrush="Gray"  BorderThickness="1,0,0,1">
+                    <StackPanel  Grid.Column="0" Margin="0,0,0,0" Width="38"   DockPanel.Dock="Left">
+                        <Button Content="A" Tag="SecondACSuccessfulNextstate" Background="Peru" FontWeight="Bold" FontSize="6"/>
+                        <Button Content="C" Tag="EMVAppErrorNextstate" Background="Peru" FontWeight="Bold" FontSize="6"/>
+                  </StackPanel>
+                </Border>
+                <Border  DockPanel.Dock="Right"  BorderBrush="Gray"  BorderThickness="0,0,1,1">
+                    <StackPanel Grid.Column="0" Margin="0,0,0,0" Width="38"   DockPanel.Dock="Right">                      
+                        <Button Content="B" Tag="EMVHardwareErrorNextstate" Background="Peru" FontWeight="Bold" FontSize="6"/>
+                        <Button Content="D" Tag="EMVSequenceErrorNextstate" Background="Peru" FontWeight="Bold" FontSize="6" />
+                    </StackPanel>
+                </Border>
+
+                <s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+                    <ControlTemplate>
+                        <c:RelativePositionPanel Margin="-4">
+                            <s:ViewModelConnector Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main"  c:RelativePositionPanel.RelativePosition="0.5,0"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="SecondACSuccessfulNextstate" ToolTip="SecondACSuccessfulNextstate" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.38"/>
+                            <s:ViewModelConnector Orientation="Left" Tag="EMVAppErrorNextstate" ToolTip="EMVAppErrorNextstate" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.55"/>
+
+                            <s:ViewModelConnector Orientation="Right" Tag="EMVHardwareErrorNextstate" ToolTip="EMVHardwareErrorNextstate" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.38"/>
+                            <s:ViewModelConnector Orientation="Right" Tag="EMVSequenceErrorNextstate" ToolTip="EMVSequenceErrorNextstate" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.55"/>
+                          
+                        </c:RelativePositionPanel>
+                    </ControlTemplate>
+                </s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+            </DockPanel>
+
+
+            <!--Pointer State-->
+            <DockPanel Margin="1.5" IsHitTestVisible="False" Tag="P" ToolTip="GENERIC" Background="DarkBlue" >
+                <Border CornerRadius="2" DockPanel.Dock="Top" BorderBrush="Gray" BorderThickness="2,1,2,0">
+                    <Label DockPanel.Dock="Top" FontStyle="Normal" FontWeight="Bold"  FontSize="9" HorizontalContentAlignment="Center" 
+                           Content="Pointer" VerticalAlignment="Top" Background="Red"></Label>
+                </Border>
+
+                <Border  CornerRadius="2" DockPanel.Dock="Left"  BorderBrush="Gray"  BorderThickness="3,0,0,3">
+                    <StackPanel  Grid.Column="0" Margin="0,0,0,0" Width="38"   DockPanel.Dock="Left">
+                        <!--<Button Content="A" Tag="NextState" Background="Blue" FontWeight="Bold" FontSize="6"/>-->
+                    </StackPanel>
+                </Border>
+
+                <Border CornerRadius="2" DockPanel.Dock="Right"  BorderBrush="Gray"  BorderThickness="0,0,3,3">
+                    <StackPanel  Grid.Column="0" Margin="0,0,0,0">
+                    </StackPanel>
+                </Border>
+
+                <s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+                    <ControlTemplate>
+                        <c:RelativePositionPanel Margin="-4">
+                            <s:ViewModelConnector Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main" c:RelativePositionPanel.RelativePosition="0.5,0"/>
+                       </c:RelativePositionPanel>
+                    </ControlTemplate>
+                </s:ViewModelDesignerItem.ConnectorDecoratorTemplate>
+            </DockPanel>
+
+        </ItemsControl.Items>
+    </s:ViewModelToolbox>
+
+
+
+</ResourceDictionary>

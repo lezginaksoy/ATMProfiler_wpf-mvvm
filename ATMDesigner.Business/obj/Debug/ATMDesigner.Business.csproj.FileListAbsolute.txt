@@ -1,0 +1,15 @@
+C:\ATM\ATMManagment\atmprofiler_new\ATMDesigner.Business\bin\Debug\ATMDesigner.Business.dll.config
+C:\ATM\ATMManagment\atmprofiler_new\ATMDesigner.Business\bin\Debug\ATMDesigner.Business.dll
+C:\ATM\ATMManagment\atmprofiler_new\ATMDesigner.Business\bin\Debug\ATMDesigner.Business.pdb
+C:\ATM\ATMManagment\atmprofiler_new\ATMDesigner.Business\bin\Debug\ATMDesigner.Common.dll
+C:\ATM\ATMManagment\atmprofiler_new\ATMDesigner.Business\bin\Debug\ATMDesigner.Repository.dll
+C:\ATM\ATMManagment\atmprofiler_new\ATMDesigner.Business\bin\Debug\log4net.dll
+C:\ATM\ATMManagment\atmprofiler_new\ATMDesigner.Business\bin\Debug\Xceed.Wpf.Toolkit.dll
+C:\ATM\ATMManagment\atmprofiler_new\ATMDesigner.Business\bin\Debug\Oracle.DataAccess.dll
+C:\ATM\ATMManagment\atmprofiler_new\ATMDesigner.Business\bin\Debug\WPFToolkit.dll
+C:\ATM\ATMManagment\atmprofiler_new\ATMDesigner.Business\bin\Debug\ATMDesigner.Repository.pdb
+C:\ATM\ATMManagment\atmprofiler_new\ATMDesigner.Business\bin\Debug\ATMDesigner.Common.pdb
+C:\ATM\ATMManagment\atmprofiler_new\ATMDesigner.Business\bin\Debug\log4net.xml
+C:\ATM\ATMManagment\atmprofiler_new\ATMDesigner.Business\obj\Debug\ATMDesigner.Business.csprojResolveAssemblyReference.cache
+C:\ATM\ATMManagment\atmprofiler_new\ATMDesigner.Business\obj\Debug\ATMDesigner.Business.dll
+C:\ATM\ATMManagment\atmprofiler_new\ATMDesigner.Business\obj\Debug\ATMDesigner.Business.pdb

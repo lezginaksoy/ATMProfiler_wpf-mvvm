@@ -1,0 +1,368 @@
+2015-09-15 10:13:57,928 [11] INFO  [ATMDesigner.UI.View.MainWindow]   GetProjectList() Start.!
+
+2015-09-15 10:13:59,459 [11] INFO  [ATMDesigner.UI.View.MainWindow]   GetTransactionList() start.!
+
+2015-09-15 10:13:59,466 [11] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   UploadStateList() Start!
+
+2015-09-15 10:13:59,656 [11] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   UploadStateList() DB 'den Upload Baþarýlý bir þekilde tamamlandý,State Tiplerine göre classlar oluþturuldu
+
+2015-09-15 10:13:59,657 [11] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Start! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_Giriþ.xml
+
+2015-09-15 10:14:25,509 [11] ERROR [ATMDesigner.UI.View.MainWindow]   AddTransaction_Event() parent is null.!
+
+2015-09-15 10:14:53,204 [11] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   SaveFile() Xml baþarýlý kaydedildi.! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_Giriþ.xml
+
+2015-09-15 10:14:53,205 [11] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Start! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_KartTipi.xml
+
+2015-09-15 10:14:53,205 [11] WARN  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Uyarý ! Dosya bulunamadý XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_KartTipi.xml
+
+2015-09-15 10:15:37,921 [11] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   Save_Executed() Start.!
+
+2015-09-15 10:15:37,963 [11] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   SaveFile() Xml baþarýlý kaydedildi.! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_KartTipi.xml
+
+2015-09-15 10:15:39,486 [11] INFO  [ATMDesigner.Business.TransactionStateBusiness]   SaveProject() Start.!
+
+2015-09-15 10:15:39,665 [11] ERROR [ATMDesigner.UI.ViewModelDesignerCanvas]   Save_Executed() Hata.! Transactionlar DB'ye baþarýlý bir þekilde kaydedilemedi. Sayý:12
+
+2015-09-15 10:25:44,431 [11] INFO  [ATMDesigner.UI.View.MainWindow]   ATMDesigner Closed !
+
+2015-09-15 10:27:40,161 [10] INFO  [ATMDesigner.UI.View.MainWindow]   GetProjectList() Start.!
+
+2015-09-15 10:27:41,244 [10] INFO  [ATMDesigner.UI.View.MainWindow]   GetTransactionList() start.!
+
+2015-09-15 10:27:41,252 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   UploadStateList() Start!
+
+2015-09-15 10:27:41,457 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   UploadStateList() DB 'den Upload Baþarýlý bir þekilde tamamlandý,State Tiplerine göre classlar oluþturuldu
+
+2015-09-15 10:27:41,458 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Start! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_Giriþ.xml
+
+2015-09-15 10:28:14,900 [10] INFO  [ATMDesigner.UI.View.MainWindow]   ATMDesigner Closed !
+
+2015-09-15 10:28:25,473 [9] INFO  [ATMDesigner.UI.View.MainWindow]   GetProjectList() Start.!
+
+2015-09-15 10:28:26,360 [9] INFO  [ATMDesigner.UI.View.MainWindow]   GetTransactionList() start.!
+
+2015-09-15 10:28:26,368 [9] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   UploadStateList() Start!
+
+2015-09-15 10:28:26,561 [9] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   UploadStateList() DB 'den Upload Baþarýlý bir þekilde tamamlandý,State Tiplerine göre classlar oluþturuldu
+
+2015-09-15 10:28:26,562 [9] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Start! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_Giriþ.xml
+
+2015-09-15 10:28:49,339 [9] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   SaveFile() Xml baþarýlý kaydedildi.! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_Giriþ.xml
+
+2015-09-15 10:28:49,340 [9] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Start! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_KartTipi.xml
+
+2015-09-15 10:28:49,340 [9] WARN  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Uyarý ! Dosya bulunamadý XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_KartTipi.xml
+
+2015-09-15 10:29:34,108 [9] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   Save_Executed() Start.!
+
+2015-09-15 10:29:34,176 [9] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   SaveFile() Xml baþarýlý kaydedildi.! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_KartTipi.xml
+
+2015-09-15 10:29:35,790 [9] INFO  [ATMDesigner.Business.TransactionStateBusiness]   SaveProject() Start.!
+
+2015-09-15 10:29:35,883 [9] ERROR [ATMDesigner.UI.ViewModelDesignerCanvas]   Save_Executed() Hata.! Transactionlar DB'ye baþarýlý bir þekilde kaydedilemedi. Sayý:12
+
+2015-09-15 10:31:36,573 [9] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   Save_Executed() Start.!
+
+2015-09-15 10:31:36,601 [9] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   SaveFile() Xml baþarýlý kaydedildi.! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_KartTipi.xml
+
+2015-09-15 10:31:46,561 [9] INFO  [ATMDesigner.Business.TransactionStateBusiness]   SaveProject() Start.!
+
+2015-09-15 10:32:50,507 [10] INFO  [ATMDesigner.UI.View.MainWindow]   GetProjectList() Start.!
+
+2015-09-15 10:32:51,655 [10] INFO  [ATMDesigner.UI.View.MainWindow]   GetTransactionList() start.!
+
+2015-09-15 10:32:51,665 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   UploadStateList() Start!
+
+2015-09-15 10:32:51,875 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   UploadStateList() DB 'den Upload Baþarýlý bir þekilde tamamlandý,State Tiplerine göre classlar oluþturuldu
+
+2015-09-15 10:32:51,875 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Start! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_Giriþ.xml
+
+2015-09-15 10:33:11,006 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   SaveFile() Xml baþarýlý kaydedildi.! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_Giriþ.xml
+
+2015-09-15 10:33:11,006 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Start! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_KartTipi.xml
+
+2015-09-15 10:33:11,007 [10] WARN  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Uyarý ! Dosya bulunamadý XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_KartTipi.xml
+
+2015-09-15 10:33:54,436 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   Save_Executed() Start.!
+
+2015-09-15 10:33:54,489 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   SaveFile() Xml baþarýlý kaydedildi.! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_KartTipi.xml
+
+2015-09-15 10:33:56,365 [10] INFO  [ATMDesigner.Business.TransactionStateBusiness]   SaveProject() Start.!
+
+2015-09-15 10:34:00,201 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   Save_Executed(), iþlem Baþarý ile tamamlandý.!
+
+2015-09-15 10:34:16,192 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   SaveFile() Xml baþarýlý kaydedildi.! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_KartTipi.xml
+
+2015-09-15 10:34:16,193 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Start! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_Giriþ.xml
+
+2015-09-15 10:35:18,816 [10] INFO  [ATMDesigner.UI.View.MainWindow]   ATMDesigner Closed !
+
+2015-09-15 11:17:45,852 [11] INFO  [ATMDesigner.UI.View.MainWindow]   GetProjectList() Start.!
+
+2015-09-15 11:17:46,848 [11] INFO  [ATMDesigner.UI.View.MainWindow]   GetTransactionList() start.!
+
+2015-09-15 11:17:46,858 [11] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   UploadStateList() Start!
+
+2015-09-15 11:17:47,044 [11] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   UploadStateList() DB 'den Upload Baþarýlý bir þekilde tamamlandý,State Tiplerine göre classlar oluþturuldu
+
+2015-09-15 11:17:47,045 [11] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Start! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_Giriþ.xml
+
+2015-09-15 11:17:56,359 [11] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   SaveFile() Xml baþarýlý kaydedildi.! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_Giriþ.xml
+
+2015-09-15 11:17:56,359 [11] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Start! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_Giriþ.xml
+
+2015-09-15 11:18:01,938 [11] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   SaveFile() Xml baþarýlý kaydedildi.! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_Giriþ.xml
+
+2015-09-15 11:18:01,938 [11] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Start! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_KartTipi.xml
+
+2015-09-15 11:23:26,153 [11] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   Save_Executed() Start.!
+
+2015-09-15 11:23:26,247 [11] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   SaveFile() Xml baþarýlý kaydedildi.! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_KartTipi.xml
+
+2015-09-15 11:23:29,183 [11] INFO  [ATMDesigner.Business.TransactionStateBusiness]   SaveProject() Start.!
+
+2015-09-15 11:23:31,834 [11] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   Save_Executed(), iþlem Baþarý ile tamamlandý.!
+
+2015-09-15 11:36:53,092 [10] INFO  [ATMDesigner.UI.View.MainWindow]   GetProjectList() Start.!
+
+2015-09-15 11:36:54,387 [10] INFO  [ATMDesigner.UI.View.MainWindow]   GetTransactionList() start.!
+
+2015-09-15 11:36:54,393 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   UploadStateList() Start!
+
+2015-09-15 11:36:54,640 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   UploadStateList() DB 'den Upload Baþarýlý bir þekilde tamamlandý,State Tiplerine göre classlar oluþturuldu
+
+2015-09-15 11:36:54,641 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Start! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_Giriþ.xml
+
+2015-09-15 11:37:54,704 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   SaveFile() Xml baþarýlý kaydedildi.! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_Giriþ.xml
+
+2015-09-15 11:37:54,704 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Start! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_KartTipi.xml
+
+2015-09-15 11:38:47,247 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   Save_Executed() Start.!
+
+2015-09-15 11:38:47,339 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   SaveFile() Xml baþarýlý kaydedildi.! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_KartTipi.xml
+
+2015-09-15 11:38:47,340 [10] INFO  [ATMDesigner.Business.TransactionStateBusiness]   SaveProject() Start.!
+
+2015-09-15 11:38:47,416 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   Save_Executed(), iþlem Baþarý ile tamamlandý.!
+
+2015-09-15 11:40:01,659 [10] INFO  [ATMDesigner.UI.View.MainWindow]   GetProjectList() Start.!
+
+2015-09-15 11:40:02,646 [10] INFO  [ATMDesigner.UI.View.MainWindow]   GetTransactionList() start.!
+
+2015-09-15 11:40:02,652 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   UploadStateList() Start!
+
+2015-09-15 11:40:02,901 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   UploadStateList() DB 'den Upload Baþarýlý bir þekilde tamamlandý,State Tiplerine göre classlar oluþturuldu
+
+2015-09-15 11:40:02,901 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Start! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_Giriþ.xml
+
+2015-09-15 11:40:27,505 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   SaveFile() Xml baþarýlý kaydedildi.! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_Giriþ.xml
+
+2015-09-15 11:40:27,505 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Start! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_Giriþ.xml
+
+2015-09-15 11:40:32,525 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   SaveFile() Xml baþarýlý kaydedildi.! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_Giriþ.xml
+
+2015-09-15 11:40:32,526 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Start! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_KartTipi.xml
+
+2015-09-15 11:42:12,330 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   SaveFile() Xml baþarýlý kaydedildi.! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_KartTipi.xml
+
+2015-09-15 11:42:12,331 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Start! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_Giriþ.xml
+
+2015-09-15 12:24:36,794 [11] INFO  [ATMDesigner.UI.View.MainWindow]   GetProjectList() Start.!
+
+2015-09-15 12:24:37,823 [11] INFO  [ATMDesigner.UI.View.MainWindow]   GetTransactionList() start.!
+
+2015-09-15 12:24:37,829 [11] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   UploadStateList() Start!
+
+2015-09-15 12:24:38,073 [11] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   UploadStateList() DB 'den Upload Baþarýlý bir þekilde tamamlandý,State Tiplerine göre classlar oluþturuldu
+
+2015-09-15 12:24:38,073 [11] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Start! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_Giriþ.xml
+
+2015-09-15 12:24:44,212 [11] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   SaveFile() Xml baþarýlý kaydedildi.! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_Giriþ.xml
+
+2015-09-15 12:24:44,213 [11] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Start! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_KartTipi.xml
+
+2015-09-15 12:28:02,972 [11] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   Save_Executed() Start.!
+
+2015-09-15 12:28:03,070 [11] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   SaveFile() Xml baþarýlý kaydedildi.! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_KartTipi.xml
+
+2015-09-15 12:28:03,072 [11] INFO  [ATMDesigner.Business.TransactionStateBusiness]   SaveProject() Start.!
+
+2015-09-15 12:28:03,235 [11] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   Save_Executed(), iþlem Baþarý ile tamamlandý.!
+
+2015-09-15 14:57:50,730 [10] INFO  [ATMDesigner.UI.View.MainWindow]   GetProjectList() Start.!
+
+2015-09-15 14:57:52,182 [10] INFO  [ATMDesigner.UI.View.MainWindow]   GetTransactionList() start.!
+
+2015-09-15 14:57:52,191 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   UploadStateList() Start!
+
+2015-09-15 14:57:52,454 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   UploadStateList() DB 'den Upload Baþarýlý bir þekilde tamamlandý,State Tiplerine göre classlar oluþturuldu
+
+2015-09-15 14:57:52,455 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Start! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_Giriþ.xml
+
+2015-09-15 14:58:01,527 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   SaveFile() Xml baþarýlý kaydedildi.! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_Giriþ.xml
+
+2015-09-15 14:58:01,527 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Start! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_KartTipi.xml
+
+2015-09-15 14:58:51,624 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   SaveFile() Xml baþarýlý kaydedildi.! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_KartTipi.xml
+
+2015-09-15 14:58:51,625 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Start! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_PinGiriþi.xml
+
+2015-09-15 14:58:51,625 [10] WARN  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Uyarý ! Dosya bulunamadý XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_PinGiriþi.xml
+
+2015-09-15 15:01:32,924 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   SaveFile() Xml baþarýlý kaydedildi.! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_PinGiriþi.xml
+
+2015-09-15 15:01:32,925 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Start! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_Giriþ.xml
+
+2015-09-15 15:01:37,437 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   SaveFile() Xml baþarýlý kaydedildi.! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_Giriþ.xml
+
+2015-09-15 15:01:37,437 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Start! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_KartTipi.xml
+
+2015-09-15 15:02:33,165 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   SaveFile() Xml baþarýlý kaydedildi.! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_KartTipi.xml
+
+2015-09-15 15:02:33,165 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Start! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_Giriþ.xml
+
+2015-09-15 15:02:38,000 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   SaveFile() Xml baþarýlý kaydedildi.! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_Giriþ.xml
+
+2015-09-15 15:02:38,001 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Start! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_PinGiriþi.xml
+
+2015-09-15 15:02:39,951 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   SaveFile() Xml baþarýlý kaydedildi.! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_PinGiriþi.xml
+
+2015-09-15 15:02:39,951 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Start! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_KartTipi.xml
+
+2015-09-15 15:02:51,090 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   Save_Executed() Start.!
+
+2015-09-15 15:02:51,200 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   SaveFile() Xml baþarýlý kaydedildi.! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_KartTipi.xml
+
+2015-09-15 15:02:51,201 [10] INFO  [ATMDesigner.Business.TransactionStateBusiness]   SaveProject() Start.!
+
+2015-09-15 15:02:51,405 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   Save_Executed(), iþlem Baþarý ile tamamlandý.!
+
+2015-09-15 15:11:48,797 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   SaveFile() Xml baþarýlý kaydedildi.! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_KartTipi.xml
+
+2015-09-15 15:11:48,797 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Start! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_Giriþ.xml
+
+2015-09-15 15:14:59,184 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   SaveFile() Xml baþarýlý kaydedildi.! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_Giriþ.xml
+
+2015-09-15 15:14:59,184 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Start! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_KartTipi.xml
+
+2015-09-15 15:15:40,273 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   SaveFile() Xml baþarýlý kaydedildi.! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_KartTipi.xml
+
+2015-09-15 15:15:40,273 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Start! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_PinGiriþi.xml
+
+2015-09-15 15:20:43,428 [10] INFO  [ATMDesigner.UI.View.MainWindow]   GetProjectList() Start.!
+
+2015-09-15 15:20:44,491 [10] INFO  [ATMDesigner.UI.View.MainWindow]   GetTransactionList() start.!
+
+2015-09-15 15:20:44,504 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   UploadStateList() Start!
+
+2015-09-15 15:20:44,796 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   UploadStateList() DB 'den Upload Baþarýlý bir þekilde tamamlandý,State Tiplerine göre classlar oluþturuldu
+
+2015-09-15 15:20:44,797 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Start! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_Giriþ.xml
+
+2015-09-15 15:21:19,935 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   SaveFile() Xml baþarýlý kaydedildi.! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_Giriþ.xml
+
+2015-09-15 15:21:19,935 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Start! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_KartTipi.xml
+
+2015-09-15 15:22:34,094 [10] INFO  [ATMDesigner.UI.View.MainWindow]   GetProjectList() Start.!
+
+2015-09-15 15:22:35,492 [10] INFO  [ATMDesigner.UI.View.MainWindow]   GetTransactionList() start.!
+
+2015-09-15 15:22:35,505 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   UploadStateList() Start!
+
+2015-09-15 15:22:35,778 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   UploadStateList() DB 'den Upload Baþarýlý bir þekilde tamamlandý,State Tiplerine göre classlar oluþturuldu
+
+2015-09-15 15:22:35,778 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Start! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_Giriþ.xml
+
+2015-09-15 15:22:44,706 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   SaveFile() Xml baþarýlý kaydedildi.! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_Giriþ.xml
+
+2015-09-15 15:22:44,706 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Start! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_PinGiriþi.xml
+
+2015-09-15 15:22:47,135 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   SaveFile() Xml baþarýlý kaydedildi.! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_PinGiriþi.xml
+
+2015-09-15 15:22:47,135 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Start! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_KartTipi.xml
+
+2015-09-15 15:22:55,796 [10] INFO  [ATMDesigner.UI.View.MainWindow]   ATMDesigner Closed !
+
+2015-09-15 15:52:18,387 [11] INFO  [ATMDesigner.UI.View.MainWindow]   GetProjectList() Start.!
+
+2015-09-15 15:52:19,452 [11] INFO  [ATMDesigner.UI.View.MainWindow]   GetTransactionList() start.!
+
+2015-09-15 15:52:19,462 [11] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   UploadStateList() Start!
+
+2015-09-15 15:52:19,744 [11] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   UploadStateList() DB 'den Upload Baþarýlý bir þekilde tamamlandý,State Tiplerine göre classlar oluþturuldu
+
+2015-09-15 15:52:19,745 [11] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Start! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_Giriþ.xml
+
+2015-09-15 15:52:32,170 [11] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   SaveFile() Xml baþarýlý kaydedildi.! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_Giriþ.xml
+
+2015-09-15 15:52:32,170 [11] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Start! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_KartTipi.xml
+
+2015-09-15 15:52:35,723 [11] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   SaveFile() Xml baþarýlý kaydedildi.! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_KartTipi.xml
+
+2015-09-15 15:52:35,724 [11] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Start! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_PinGiriþi.xml
+
+2015-09-15 16:01:26,399 [11] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   Save_Executed() Start.!
+
+2015-09-15 16:01:26,464 [11] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   SaveFile() Xml baþarýlý kaydedildi.! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_PinGiriþi.xml
+
+2015-09-15 16:01:26,465 [11] INFO  [ATMDesigner.Business.TransactionStateBusiness]   SaveProject() Start.!
+
+2015-09-15 16:01:26,625 [11] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   Save_Executed(), iþlem Baþarý ile tamamlandý.!
+
+2015-09-15 16:06:24,096 [10] INFO  [ATMDesigner.UI.View.MainWindow]   GetProjectList() Start.!
+
+2015-09-15 16:06:25,182 [10] INFO  [ATMDesigner.UI.View.MainWindow]   GetTransactionList() start.!
+
+2015-09-15 16:06:25,192 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   UploadStateList() Start!
+
+2015-09-15 16:06:25,466 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   UploadStateList() DB 'den Upload Baþarýlý bir þekilde tamamlandý,State Tiplerine göre classlar oluþturuldu
+
+2015-09-15 16:06:25,466 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Start! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_Giriþ.xml
+
+2015-09-15 16:06:35,447 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   SaveFile() Xml baþarýlý kaydedildi.! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_Giriþ.xml
+
+2015-09-15 16:06:35,447 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Start! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_KartTipi.xml
+
+2015-09-15 16:06:40,268 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   SaveFile() Xml baþarýlý kaydedildi.! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_KartTipi.xml
+
+2015-09-15 16:06:40,268 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Start! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_PinGiriþi.xml
+
+2015-09-15 16:07:09,584 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   SaveFile() Xml baþarýlý kaydedildi.! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_PinGiriþi.xml
+
+2015-09-15 16:07:09,585 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Start! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_KartTipi.xml
+
+2015-09-15 16:07:18,708 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   SaveFile() Xml baþarýlý kaydedildi.! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_KartTipi.xml
+
+2015-09-15 16:07:18,708 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Start! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_PinGiriþi.xml
+
+2015-09-15 16:07:49,115 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   SaveFile() Xml baþarýlý kaydedildi.! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_PinGiriþi.xml
+
+2015-09-15 16:07:49,116 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Start! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_Giriþ.xml
+
+2015-09-15 16:08:29,567 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   SaveFile() Xml baþarýlý kaydedildi.! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_Giriþ.xml
+
+2015-09-15 16:08:29,568 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Start! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_PinGiriþi.xml
+
+2015-09-15 16:27:41,765 [11] INFO  [ATMDesigner.UI.View.MainWindow]   GetProjectList() Start.!
+
+2015-09-15 16:27:43,271 [11] INFO  [ATMDesigner.UI.View.MainWindow]   GetTransactionList() start.!
+
+2015-09-15 16:27:43,284 [11] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   UploadStateList() Start!
+
+2015-09-15 16:27:43,620 [11] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   UploadStateList() DB 'den Upload Baþarýlý bir þekilde tamamlandý,State Tiplerine göre classlar oluþturuldu
+
+2015-09-15 16:27:43,621 [11] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Start! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_Giriþ.xml
+
+2015-09-15 16:27:51,637 [11] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   SaveFile() Xml baþarýlý kaydedildi.! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_Giriþ.xml
+
+2015-09-15 16:27:51,637 [11] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Start! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_PinGiriþi.xml
+
+2015-09-15 16:34:59,497 [11] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   Save_Executed() Start.!
+
+2015-09-15 16:34:59,607 [11] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   SaveFile() Xml baþarýlý kaydedildi.! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_PinGiriþi.xml
+
+2015-09-15 16:34:59,608 [11] INFO  [ATMDesigner.Business.TransactionStateBusiness]   SaveProject() Start.!
+
+2015-09-15 16:34:59,764 [11] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   Save_Executed(), iþlem Baþarý ile tamamlandý.!
+

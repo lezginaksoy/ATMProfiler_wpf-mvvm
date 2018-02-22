@@ -1,0 +1,36 @@
+2016-08-15 11:58:22,563 [10] INFO  [ATMDesigner.UI.View.MainWindow]   GetProjectList() Start.!
+
+2016-08-15 11:58:24,007 [10] INFO  [ATMDesigner.UI.View.MainWindow]   GetTransactionList() start.!
+
+2016-08-15 11:58:24,023 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   UploadStateList() Start!
+
+2016-08-15 11:58:25,103 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   UploadStateList() DB 'den Upload Baþarýlý bir þekilde tamamlandý,State Tiplerine göre classlar oluþturuldu
+
+2016-08-15 11:58:25,105 [10] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Start! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_PinGiriþi.xml
+
+2016-08-15 11:58:58,541 [10] INFO  [ATMDesigner.UI.View.MainWindow]   GoTo_NextState_Trans() Start.!
+
+2016-08-15 11:58:58,542 [10] WARN  [ATMDesigner.UI.View.MainWindow]   GoTo_NextState_Trans(), Sadece Pointer state Go To özelliðne Sahiptir. State:D
+
+2016-08-15 11:59:14,769 [10] INFO  [ATMDesigner.UI.View.MainWindow]   GoTo_NextState_Trans() Start.!
+
+2016-08-15 12:01:48,256 [9] INFO  [ATMDesigner.UI.View.MainWindow]   GetProjectList() Start.!
+
+2016-08-15 12:01:49,440 [9] INFO  [ATMDesigner.UI.View.MainWindow]   GetTransactionList() start.!
+
+2016-08-15 12:01:49,450 [9] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   UploadStateList() Start!
+
+2016-08-15 12:01:50,192 [9] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   UploadStateList() DB 'den Upload Baþarýlý bir þekilde tamamlandý,State Tiplerine göre classlar oluþturuldu
+
+2016-08-15 12:01:50,193 [9] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Start! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_PinGiriþi.xml
+
+2016-08-15 12:07:37,000 [9] INFO  [ATMDesigner.UI.View.MainWindow]   GetProjectList() Start.!
+
+2016-08-15 12:07:38,132 [9] INFO  [ATMDesigner.UI.View.MainWindow]   GetTransactionList() start.!
+
+2016-08-15 12:07:38,144 [9] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   UploadStateList() Start!
+
+2016-08-15 12:07:38,997 [9] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   UploadStateList() DB 'den Upload Baþarýlý bir þekilde tamamlandý,State Tiplerine göre classlar oluþturuldu
+
+2016-08-15 12:07:38,999 [9] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Start! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_PinGiriþi.xml
+

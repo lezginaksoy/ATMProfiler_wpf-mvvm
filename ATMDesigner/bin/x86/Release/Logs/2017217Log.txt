@@ -1,0 +1,88 @@
+2017-02-17 17:24:17,908 [1] ERROR [ATMDesigner.UI.ViewModelDesignerCanvas]   UpdateBrandAndConfig() Hata.! Brand ve Config update iþlemlerinde bir hata oluþtu. Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+
+2017-02-17 17:24:29,488 [1] INFO  [ATMDesigner.UI.View.MainWindow]   GetProjectList() Start.!
+
+2017-02-17 17:24:33,674 [1] INFO  [ATMDesigner.UI.View.MainWindow]   GetTransactionList() start.!
+
+2017-02-17 17:24:33,713 [1] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   UploadStateList() Start!
+
+2017-02-17 17:24:34,645 [1] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   UploadStateList() DB 'den Upload Baþarýlý bir þekilde tamamlandý,State Tiplerine göre classlar oluþturuldu
+
+2017-02-17 17:24:34,654 [1] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Start! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_PinGiriþi.xml
+
+2017-02-17 17:25:12,569 [1] ERROR [ATMDesigner.UI.ViewModelDesignerCanvas]   UpdateBrandAndConfig() Hata.! Brand ve Config update iþlemlerinde bir hata oluþtu. Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+
+2017-02-17 17:25:28,831 [1] ERROR [ATMDesigner.UI.ViewModelDesignerCanvas]   UpdateBrandAndConfig() Hata.! Brand ve Config update iþlemlerinde bir hata oluþtu. Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+
+2017-02-17 17:25:32,177 [1] ERROR [ATMDesigner.UI.ViewModelDesignerCanvas]   UpdateBrandAndConfig() Hata.! Brand ve Config update iþlemlerinde bir hata oluþtu. Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+
+2017-02-17 17:25:38,052 [1] ERROR [ATMDesigner.UI.ViewModelDesignerCanvas]   UpdateBrandAndConfig() Hata.! Brand ve Config update iþlemlerinde bir hata oluþtu. Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+
+2017-02-17 17:25:48,219 [1] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   SaveFile() Xml baþarýlý kaydedildi.! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_PinGiriþi.xml
+
+2017-02-17 17:25:48,228 [1] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Start! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_Transaction1.xml
+
+2017-02-17 17:25:55,053 [1] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   SaveFile() Xml baþarýlý kaydedildi.! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_Transaction1.xml
+
+2017-02-17 17:25:55,069 [1] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Start! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_KartTipi.xml
+
+2017-02-17 17:25:57,522 [1] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   SaveFile() Xml baþarýlý kaydedildi.! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_KartTipi.xml
+
+2017-02-17 17:25:57,530 [1] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Start! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_Giriþ.xml
+
+2017-02-17 17:27:15,545 [1] ERROR [ATMDesigner.UI.ViewModelDesignerCanvas]   UpdateBrandAndConfig() Hata.! Brand ve Config update iþlemlerinde bir hata oluþtu. Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+
+2017-02-17 17:27:46,443 [1] INFO  [ATMDesigner.UI.View.MainWindow]   GetProjectList() Start.!
+
+2017-02-17 17:27:50,697 [1] INFO  [ATMDesigner.UI.View.MainWindow]   GetTransactionList() start.!
+
+2017-02-17 17:27:50,724 [1] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   UploadStateList() Start!
+
+2017-02-17 17:27:51,601 [1] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   UploadStateList() DB 'den Upload Baþarýlý bir þekilde tamamlandý,State Tiplerine göre classlar oluþturuldu
+
+2017-02-17 17:27:51,611 [1] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Start! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_PinGiriþi.xml
+
+2017-02-17 17:28:00,450 [1] ERROR [ATMDesigner.UI.ViewModelDesignerCanvas]   UpdateBrandAndConfig() Hata.! Brand ve Config update iþlemlerinde bir hata oluþtu. Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+
+2017-02-17 17:28:04,213 [1] ERROR [ATMDesigner.UI.ViewModelDesignerCanvas]   UpdateBrandAndConfig() Hata.! Brand ve Config update iþlemlerinde bir hata oluþtu. Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+
+2017-02-17 17:28:06,798 [1] ERROR [ATMDesigner.UI.ViewModelDesignerCanvas]   UpdateBrandAndConfig() Hata.! Brand ve Config update iþlemlerinde bir hata oluþtu. Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+
+2017-02-17 17:28:14,245 [1] ERROR [ATMDesigner.UI.ViewModelDesignerCanvas]   UpdateBrandAndConfig() Hata.! Brand ve Config update iþlemlerinde bir hata oluþtu. Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+
+2017-02-17 17:28:18,567 [1] ERROR [ATMDesigner.UI.ViewModelDesignerCanvas]   UpdateBrandAndConfig() Hata.! Brand ve Config update iþlemlerinde bir hata oluþtu. Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+
+2017-02-17 17:28:24,236 [1] ERROR [ATMDesigner.UI.ViewModelDesignerCanvas]   UpdateBrandAndConfig() Hata.! Brand ve Config update iþlemlerinde bir hata oluþtu. Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+
+2017-02-17 17:28:27,752 [1] ERROR [ATMDesigner.UI.ViewModelDesignerCanvas]   UpdateBrandAndConfig() Hata.! Brand ve Config update iþlemlerinde bir hata oluþtu. Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+
+2017-02-17 17:30:38,286 [1] ERROR [ATMDesigner.UI.ViewModelDesignerCanvas]   UpdateBrandAndConfig() Hata.! Brand ve Config update iþlemlerinde bir hata oluþtu. Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+
+2017-02-17 17:31:46,829 [1] ERROR [ATMDesigner.UI.ViewModelDesignerCanvas]   UpdateBrandAndConfig() Hata.! Brand ve Config update iþlemlerinde bir hata oluþtu. Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+
+2017-02-17 17:31:50,315 [1] ERROR [ATMDesigner.UI.ViewModelDesignerCanvas]   UpdateBrandAndConfig() Hata.! Brand ve Config update iþlemlerinde bir hata oluþtu. Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+
+2017-02-17 17:31:52,559 [1] ERROR [ATMDesigner.UI.ViewModelDesignerCanvas]   UpdateBrandAndConfig() Hata.! Brand ve Config update iþlemlerinde bir hata oluþtu. Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+
+2017-02-17 17:31:55,596 [1] ERROR [ATMDesigner.UI.ViewModelDesignerCanvas]   UpdateBrandAndConfig() Hata.! Brand ve Config update iþlemlerinde bir hata oluþtu. Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+
+2017-02-17 17:32:01,295 [1] INFO  [ATMDesigner.UI.View.MainWindow]   ATMDesigner Closed !
+

@@ -1,0 +1,658 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    xmlns:s="clr-namespace:ATMDesigner.UI"
+                     xmlns:sw="clr-namespace:ATMDesigner.UI.View"
+                    xmlns:c="clr-namespace:ATMDesigner.UI.Controls">
+
+    <ContextMenu x:Key="DesignerItemContextMenu">
+        <MenuItem Header="Cut" Command="{x:Static ApplicationCommands.Cut}">
+            <MenuItem.Icon>
+                <Image Source="Images/Cut.png" Width="16"/>
+            </MenuItem.Icon>
+        </MenuItem>
+        <MenuItem Header="Copy" Command="{x:Static ApplicationCommands.Copy}">
+            <MenuItem.Icon>
+                <Image Source="Images/Copy.png" Width="16"/>
+            </MenuItem.Icon>
+        </MenuItem>
+        <MenuItem Header="Paste" Command="{x:Static ApplicationCommands.Paste}">
+            <MenuItem.Icon>
+                <Image Source="Images/Paste.png" Width="16"/>
+            </MenuItem.Icon>
+        </MenuItem>
+        <MenuItem Header="Delete" Command="{x:Static ApplicationCommands.Delete}">
+            <MenuItem.Icon>
+                <Image Source="Images/Delete.png" Width="16"/>
+            </MenuItem.Icon>
+        </MenuItem>
+        <MenuItem Header="Go To" Command="{x:Static sw:MainWindow.Go_To}">
+            <MenuItem.Icon>
+                <Image Source="Images/Group.png" Width="16"/>
+            </MenuItem.Icon>
+        </MenuItem>
+
+        <!--<MenuItem Header="Properties" Command="{x:Static ApplicationCommands.Properties}">
+            <MenuItem.Icon>
+                <Image Source="Images/Group.png" Width="16"/>
+            </MenuItem.Icon>
+        </MenuItem>-->
+        <!--<MenuItem Header="Grouping">
+            <MenuItem Header="Group" Command="{x:Static s:DesignerCanvas.Group}">
+                <MenuItem.Icon>
+                    <Image Source="Images/Group.png" Width="16"/>
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Header="Ungroup" Command="{x:Static s:DesignerCanvas.Ungroup}">
+                <MenuItem.Icon>
+                    <Image Source="Images/Ungroup.png" Width="16"/>
+                </MenuItem.Icon>
+            </MenuItem>
+        </MenuItem>-->
+        <!--<MenuItem Header="Order">
+            <MenuItem Header="Bring Forward" Command="{x:Static s:DesignerCanvas.BringForward}">
+                <MenuItem.Icon>
+                    <Image Source="Images/BringForward.png" Width="16"/>
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Header="Bring To Front" Command="{x:Static s:DesignerCanvas.BringToFront}">
+                <MenuItem.Icon>
+                    <Image Source="Images/BringToFront.png" Width="16"/>
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Header="Send Backward" Command="{x:Static s:DesignerCanvas.SendBackward}">
+                <MenuItem.Icon>
+                    <Image Source="Images/SendBackward.png" Width="16"/>
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Header="Send To Back" Command="{x:Static s:DesignerCanvas.SendToBack}">
+                <MenuItem.Icon>
+                    <Image Source="Images/SendToBack.png" Width="16"/>
+                </MenuItem.Icon>
+            </MenuItem>
+        </MenuItem>-->
+        
+    </ContextMenu>
+
+    <!-- ViewModelConnector Style -->
+    <Style TargetType="{x:Type s:ViewModelConnector}">
+        <Setter Property="Width" Value="8"/>
+        <Setter Property="Height" Value="8"/>
+        <Setter Property="Cursor" Value="Cross"/>
+        <Setter Property="SnapsToDevicePixels" Value="true"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type s:ViewModelConnector}">
+                    <Grid>
+                        <!-- transparent extra space makes ViewModelConnector easier to hit -->
+                        <Rectangle Fill="Transparent" Margin="-2"/>
+                        <Rectangle Fill="Lavender" StrokeThickness="1" Stroke="#AA000080"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- ViewModelConnectorDecoratorTemplate Default Template -->
+    <ControlTemplate x:Key="ConnectorDecoratorTemplate" TargetType="{x:Type Control}">
+        <Grid Margin="-5">
+            <s:ViewModelConnector x:Name="Left" Orientation="Left" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+            <s:ViewModelConnector x:Name="Top" Orientation="Top" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+            <s:ViewModelConnector x:Name="Right" Orientation="Right" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+            <s:ViewModelConnector x:Name="Bottom" Orientation="Bottom" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="Connector_A_State" TargetType="{x:Type Control}">
+            <c:RelativePositionPanel Margin="-4">
+            <s:ViewModelConnector x:Name="Top" Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main" c:RelativePositionPanel.RelativePosition="0.5,0"/>
+            <s:ViewModelConnector x:Name="GoodReadNextState" Orientation="Left" Tag="GoodReadNextState" ToolTip="GoodReadNextState"  Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.38"/>
+            <s:ViewModelConnector x:Name="NoFITMatchNextState" Orientation="Right" Tag="NoFITMatchNextState" ToolTip="NoFITMatchNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.38"/>
+            </c:RelativePositionPanel>
+        </ControlTemplate>
+    
+    <ControlTemplate x:Key="Connector_B_State" TargetType="{x:Type Control}">
+        <c:RelativePositionPanel Margin="-4">
+            <s:ViewModelConnector x:Name="Top" Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main" c:RelativePositionPanel.RelativePosition="0.5,0"/>
+            <s:ViewModelConnector x:Name="TimeoutNextState" Orientation="Left" Tag="TimeoutNextState" ToolTip="TimeoutNextState"  Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.38"/>
+            <s:ViewModelConnector  x:Name="LocalPINCheckGoodPINNextState" Orientation="Left" Tag="LocalPINCheckGoodPINNextState" ToolTip="LocalPINCheckGoodPINNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.55"/>
+            <s:ViewModelConnector  x:Name="RemotePINCheckNextState" Orientation="Left" Tag="RemotePINCheckNextState" ToolTip="RemotePINCheckNextState" Height="12" Width="12" c:RelativePositionPanel.RelativePosition="0,0.74"/>
+          
+            <s:ViewModelConnector  x:Name="CancelNextState" Orientation="Right"  Tag="CancelNextState" ToolTip="CancelNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.38"/>
+            <s:ViewModelConnector   x:Name="LocalPINCheckMaximumBadPINsNextState" Orientation="Right" Tag="LocalPINCheckMaximumBadPINsNextState" ToolTip="LocalPINCheckMaximumBadPINsNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.55"/>
+
+    </c:RelativePositionPanel>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="Connector_D_State" TargetType="{x:Type Control}">
+        <c:RelativePositionPanel Margin="-4">
+            <s:ViewModelConnector x:Name="Top" Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main" c:RelativePositionPanel.RelativePosition="0.5,0"/>
+            <s:ViewModelConnector x:Name="NextState" Orientation="Left" Tag="NextState" ToolTip="NextState"  Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.38"/>
+     </c:RelativePositionPanel>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="Connector_E_State" TargetType="{x:Type Control}">
+        <c:RelativePositionPanel Margin="-4">
+            <s:ViewModelConnector x:Name="Top" Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main" c:RelativePositionPanel.RelativePosition="0.5,0"/>
+            <s:ViewModelConnector x:Name="TimeoutNextState" Orientation="Left" Tag="TimeoutNextState" ToolTip="TimeoutNextState"  Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.38"/>
+            <s:ViewModelConnector x:Name="FDK_A_NextState" Orientation="Left" Tag="FDK_A_NextState" ToolTip="FDK_A_NextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.55"/>
+            <s:ViewModelConnector x:Name="FDK_C_NextState" Orientation="Left" Tag="FDK_C_NextState" ToolTip="FDK_B_NextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.74"/>
+
+            <s:ViewModelConnector x:Name="CancelNextState" Orientation="Right" Tag="CancelNextState" ToolTip="CancelNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.38"/>
+            <s:ViewModelConnector x:Name="FDK_B_NextState" Orientation="Right"  Tag="FDK_B_NextState" ToolTip="FDK_B_NextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.55"/>
+            <s:ViewModelConnector x:Name="FDK_D_NextState" Orientation="Right" Tag="FDK_D_NextState" ToolTip="FDK_D_NextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.74"/>
+ </c:RelativePositionPanel>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="Connector_F_State" TargetType="{x:Type Control}">
+        <c:RelativePositionPanel Margin="-14">
+            <s:ViewModelConnector x:Name="Top" Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main" c:RelativePositionPanel.RelativePosition="0.5,0"/>
+            <s:ViewModelConnector x:Name="TimeoutNextState" Orientation="Left" Tag="TimeoutNextState" ToolTip="TimeoutNextState"  Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.38"/>
+            <s:ViewModelConnector x:Name="FDK_A_NextState" Orientation="Left" Tag="FDK_A_NextState" ToolTip="FDK_A_NextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.55"/>
+            <s:ViewModelConnector x:Name="FDK_C_NextState" Orientation="Left" Tag="FDK_C_NextState" ToolTip="FDK_B_NextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.74"/>
+
+            <s:ViewModelConnector x:Name="CancelNextState" Orientation="Right" Tag="CancelNextState" ToolTip="CancelNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.38"/>
+            <s:ViewModelConnector x:Name="FDK_B_NextState" Orientation="Right"  Tag="FDK_B_NextState" ToolTip="FDK_B_NextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.55"/>
+            <s:ViewModelConnector x:Name="FDK_D_NextState" Orientation="Right" Tag="FDK_D_NextState" ToolTip="FDK_D_NextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.74"/>
+        </c:RelativePositionPanel>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="Connector_H_State" TargetType="{x:Type Control}">
+        <c:RelativePositionPanel Margin="-4">
+            <s:ViewModelConnector x:Name="Top" Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main" c:RelativePositionPanel.RelativePosition="0.5,0"/>
+            <s:ViewModelConnector x:Name="TimeoutNextState" Orientation="Left" Tag="TimeoutNextState" ToolTip="TimeoutNextState"  Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.38"/>
+            <s:ViewModelConnector x:Name="FDK_A_NextState" Orientation="Left" Tag="FDK_A_NextState" ToolTip="FDK_A_NextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.55"/>
+            <s:ViewModelConnector x:Name="FDK_C_NextState" Orientation="Left" Tag="FDK_C_NextState" ToolTip="FDK_B_NextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.74"/>
+
+            <s:ViewModelConnector x:Name="CancelNextState" Orientation="Right" Tag="CancelNextState" ToolTip="CancelNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.38"/>
+            <s:ViewModelConnector x:Name="FDK_B_NextState" Orientation="Right"  Tag="FDK_B_NextState" ToolTip="FDK_B_NextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.55"/>
+            <s:ViewModelConnector x:Name="FDK_D_NextState" Orientation="Right" Tag="FDK_D_NextState" ToolTip="FDK_D_NextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.74"/>
+              </c:RelativePositionPanel>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="Connector_I_State" TargetType="{x:Type Control}">
+        <c:RelativePositionPanel Margin="-4">
+            <s:ViewModelConnector x:Name="Top" Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main" c:RelativePositionPanel.RelativePosition="0.5,0"/>
+            <s:ViewModelConnector x:Name="TimeoutNextState" Orientation="Left" Tag="TimeoutNextState" ToolTip="TimeoutNextState"  Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.38"/>
+    </c:RelativePositionPanel>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="Connector_J_State" TargetType="{x:Type Control}">
+        <c:RelativePositionPanel Margin="-4">
+            <s:ViewModelConnector x:Name="Top" Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main" c:RelativePositionPanel.RelativePosition="0.5,0"/>
+         
+            <s:ViewModelConnector x:Name="NextState" Orientation="Left" Tag="NextState" ToolTip="NextState"  Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.38"/>
+        </c:RelativePositionPanel>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="Connector_K_State" TargetType="{x:Type Control}">
+        <c:RelativePositionPanel Margin="-4">
+            <s:ViewModelConnector x:Name="Top" Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main" c:RelativePositionPanel.RelativePosition="0.5,0"/>
+            <s:ViewModelConnector x:Name="NextState0" Orientation="Left" Tag="NextState0" ToolTip="NextState0"  Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.38"/>
+            <s:ViewModelConnector x:Name="NextState2" Orientation="Left" Tag="NextState2" ToolTip="NextState2" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.55"/>
+            <s:ViewModelConnector x:Name="NextState4" Orientation="Left" Tag="NextState4" ToolTip="NextState4" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.74"/>
+            <s:ViewModelConnector x:Name="NextState6"  Orientation="Left" Tag="NextState6" ToolTip="NextState6" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.92"/>
+
+            <s:ViewModelConnector x:Name="NextState1" Orientation="Right"  Tag="NextState1" ToolTip="NextState1" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.38"/>
+            <s:ViewModelConnector x:Name="NextState3" Orientation="Right" Tag="NextState3" ToolTip="NextState3" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.55"/>
+            <s:ViewModelConnector x:Name="NextState5"  Orientation="Right" Tag="NextState5" ToolTip="NextState5" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.74"/>
+            <s:ViewModelConnector x:Name="NextState7" Orientation="Right" Tag="NextState7" ToolTip="NextState7" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.92"/>
+  </c:RelativePositionPanel>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="Connector_k_State" TargetType="{x:Type Control}">
+        <c:RelativePositionPanel Margin="-4">
+            <s:ViewModelConnector x:Name="Top" Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main" c:RelativePositionPanel.RelativePosition="0.5,0"/>
+            <s:ViewModelConnector x:Name="NextState" Orientation="Left" Tag="NextState" ToolTip="NextState"  Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.38"/>
+            <s:ViewModelConnector  x:Name="NoFitMatchNextState" Orientation="Right" Tag="NoFitMatchNextState" ToolTip="NoFitMatchNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.38"/>
+
+        </c:RelativePositionPanel>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="Connector_W_State" TargetType="{x:Type Control}">
+        <c:RelativePositionPanel Margin="-4">
+            <s:ViewModelConnector x:Name="Top" Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main" c:RelativePositionPanel.RelativePosition="0.5,0"/>
+            <s:ViewModelConnector x:Name="FDK_A_NextState" Orientation="Left" Tag="FDK_A_NextState" ToolTip="FDK_A_NextState"  Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.38"/>
+            <s:ViewModelConnector x:Name="FDK_C_NextState" Orientation="Left" Tag="FDK_C_NextState" ToolTip="FDK_C_NextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.55"/>
+            <s:ViewModelConnector x:Name="FDK_F_NextState" Orientation="Left" Tag="FDK_F_NextState" ToolTip="FDK_F_NextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.74"/>
+            <s:ViewModelConnector x:Name="FDK_H_NextState" Orientation="Left" Tag="FDK_H_NextState" ToolTip="FDK_H_NextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.92"/>
+
+            <s:ViewModelConnector x:Name="FDK_B_NextState" Orientation="Right"  Tag="FDK_B_NextState" ToolTip="FDK_B_NextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.38"/>
+            <s:ViewModelConnector x:Name="FDK_D_NextState" Orientation="Right" Tag="FDK_D_NextState" ToolTip="FDK_D_NextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.55"/>
+            <s:ViewModelConnector x:Name="FDK_G_NextState" Orientation="Right" Tag="FDK_G_NextState" ToolTip="FDK_G_NextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.74"/>
+            <s:ViewModelConnector x:Name="FDK_I_NextState" Orientation="Right" Tag="FDK_I_NextState" ToolTip="FDK_I_NextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.92"/>
+
+
+        </c:RelativePositionPanel>
+    </ControlTemplate>
+    
+    <ControlTemplate x:Key="Connector_X_State" TargetType="{x:Type Control}">
+        <c:RelativePositionPanel Margin="-4">
+            <s:ViewModelConnector x:Name="Top" Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main" c:RelativePositionPanel.RelativePosition="0.5,0"/>
+            <s:ViewModelConnector x:Name="TimeoutNextState"  Orientation="Left" Tag="TimeoutNextState" ToolTip="TimeoutNextState"  Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.38"/>
+            <s:ViewModelConnector x:Name="CancelNextState" Orientation="Left" Tag="CancelNextState" ToolTip="CancelNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.55"/>
+            <s:ViewModelConnector x:Name="FDKNextState" Orientation="Right" Tag="FDKNextState" ToolTip="FDKNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.38"/>
+        </c:RelativePositionPanel>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="Connector_Y_State" TargetType="{x:Type Control}">
+        <c:RelativePositionPanel Margin="-4">
+            <s:ViewModelConnector x:Name="Top" Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main" c:RelativePositionPanel.RelativePosition="0.5,0"/>
+            <s:ViewModelConnector x:Name="TimeoutNextState" Orientation="Left" Tag="TimeoutNextState" ToolTip="TimeoutNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.38"/>
+            <s:ViewModelConnector x:Name="FDKNextState" Orientation="Left" Tag="FDKNextState" ToolTip="FDKNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.55"/>
+            <s:ViewModelConnector x:Name="CancelNextState" Orientation="Right" Tag="CancelNextState" ToolTip="CancelNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.38"/>
+
+        </c:RelativePositionPanel>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="Connector_CAS_State" TargetType="{x:Type Control}">
+        <c:RelativePositionPanel Margin="-4">
+            <s:ViewModelConnector x:Name="Top" Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main" c:RelativePositionPanel.RelativePosition="0.5,0"/>
+            <s:ViewModelConnector x:Name="GoodNextState" Orientation="Left" Tag="GoodNextState" ToolTip="GoodNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.38"/>
+            <s:ViewModelConnector x:Name="DeviceErrorNextState" Orientation="Left" Tag="DeviceErrorNextState" ToolTip="DeviceErrorNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.55"/>
+            <s:ViewModelConnector x:Name="RefundSlotNextState" Orientation="Left" Tag="RefundSlotNextState" ToolTip="RefundSlotNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.74"/>
+
+            <s:ViewModelConnector x:Name="CancelNextState" Orientation="Right" Tag="CancelNextState" ToolTip="CancelNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.38"/>
+            <s:ViewModelConnector x:Name="TimeoutNextState" Orientation="Right" Tag="TimeoutNextState" ToolTip="TimeoutNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.55"/>
+
+        </c:RelativePositionPanel>
+    </ControlTemplate>
+    
+    <ControlTemplate x:Key="Connector_r_State" TargetType="{x:Type Control}">
+        <c:RelativePositionPanel Margin="-4">
+            <s:ViewModelConnector x:Name="Top" Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main" c:RelativePositionPanel.RelativePosition="0.5,0"/>
+            <s:ViewModelConnector x:Name="OKNextState" Orientation="Left" Tag="OKNextState" ToolTip="OKNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.38"/>
+            <s:ViewModelConnector x:Name="ErrorNextState" Orientation="Left" Tag="ErrorNextState" ToolTip="ErrorNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.55"/>
+            <s:ViewModelConnector x:Name="CashCapturedNextState" Orientation="Left" Tag="CashCapturedNextState" ToolTip="CashCapturedNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.74"/>
+
+            <s:ViewModelConnector x:Name="CancelAndESCROWEmptyNextState" Orientation="Right" Tag="CancelAndESCROWEmptyNextState" ToolTip="CancelAndESCROWEmptyNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.38"/>
+            <s:ViewModelConnector x:Name="TimeoutNextState" Orientation="Right" Tag="TimeoutNextState" ToolTip="TimeoutNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.55"/>
+
+        </c:RelativePositionPanel>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="Connector_b_State" TargetType="{x:Type Control}">
+        <c:RelativePositionPanel Margin="-4">
+            <s:ViewModelConnector x:Name="Top" Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main" c:RelativePositionPanel.RelativePosition="0.5,0"/>
+            <s:ViewModelConnector x:Name="TimeoutNextState" Orientation="Left" Tag="TimeoutNextState" ToolTip="TimeoutNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.38"/>
+            <s:ViewModelConnector x:Name="CancelNextState" Orientation="Left" Tag="CancelNextState" ToolTip="CancelNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.55"/>
+
+            <s:ViewModelConnector x:Name="GoodNextState" Orientation="Right" Tag="GoodNextState" ToolTip="GoodNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.38"/>
+            <s:ViewModelConnector x:Name="CSPFailNextState" Orientation="Right" Tag="CSPFailNextState" ToolTip="CSPFailNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.55"/>
+
+        </c:RelativePositionPanel>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="Connector_Plus_State" TargetType="{x:Type Control}">
+        <c:RelativePositionPanel Margin="-4">
+            <s:ViewModelConnector x:Name="Top" Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main" c:RelativePositionPanel.RelativePosition="0.5,0"/>
+            <s:ViewModelConnector x:Name="ICCInitStartedNextState" Orientation="Left" Tag="ICCInitStartedNextState" ToolTip="ICCInitStartedNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.38"/>
+
+            <s:ViewModelConnector x:Name="ICCInitNotStartedNextState" Orientation="Right" Tag="ICCInitNotStartedNextState" ToolTip="ICCInitNotStartedNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.38"/>
+
+        </c:RelativePositionPanel>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="Connector_Comma_State" TargetType="{x:Type Control}">
+        <c:RelativePositionPanel Margin="-4">
+            <s:ViewModelConnector x:Name="Top" Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main" c:RelativePositionPanel.RelativePosition="0.5,0"/>
+            <s:ViewModelConnector x:Name="ICCInitSuccessfulNextState" Orientation="Left" Tag="ICCInitSuccessfulNextState" ToolTip="ICCInitSuccessfulNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.38"/>
+            <s:ViewModelConnector x:Name="NoUsableAppNextState" Orientation="Left" Tag="NoUsableAppNextState" ToolTip="NoUsableAppNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.55"/>
+            <s:ViewModelConnector x:Name="ICCHardLevelErrorNextState" Orientation="Left" Tag="ICCHardLevelErrorNextState" ToolTip="ICCHardLevelErrorNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.74"/>
+
+            <s:ViewModelConnector x:Name="CardNotSmartNextState" Orientation="Right" Tag="CardNotSmartNextState" ToolTip="CardNotSmartNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.38"/>
+            <s:ViewModelConnector x:Name="ICCAppLevelErrorNextState" Orientation="Right" Tag="ICCAppLevelErrorNextState" ToolTip="ICCAppLevelErrorNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.55"/>
+
+        </c:RelativePositionPanel>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="Connector_Dash_State" TargetType="{x:Type Control}">
+        <c:RelativePositionPanel Margin="-4">
+            <s:ViewModelConnector x:Name="Top" Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main" c:RelativePositionPanel.RelativePosition="0.5,0"/>
+            <s:ViewModelConnector x:Name="LanguageMatchNextState" Orientation="Left" Tag="LanguageMatchNextState" ToolTip="LanguageMatchNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.38"/>
+
+            <s:ViewModelConnector x:Name="NoLanguageMatchNextState" Orientation="Right" Tag="NoLanguageMatchNextState" ToolTip="NoLanguageMatchNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.38"/>
+          
+        </c:RelativePositionPanel>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="Connector_Dot_State" TargetType="{x:Type Control}">
+        <c:RelativePositionPanel Margin="-4">
+            <s:ViewModelConnector x:Name="Top" Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main" c:RelativePositionPanel.RelativePosition="0.5,0"/>
+            <s:ViewModelConnector x:Name="TimeOutNextState" Orientation="Left" Tag="TimeOutNextState" ToolTip="TimeOutNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.38"/>
+            <s:ViewModelConnector x:Name="CancelKeyNextState" Orientation="Left" Tag="CancelKeyNextState" ToolTip="CancelKeyNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.55"/>
+            <s:ViewModelConnector x:Name="CardholderAppNextState" Orientation="Left" Tag="CardholderAppNextState" ToolTip="CardholderAppNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.74"/>
+
+            <s:ViewModelConnector x:Name="AppAutomaticallyNextState" Orientation="Right" Tag="AppAutomaticallyNextState" ToolTip="AppAutomaticallyNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.38"/>
+            <s:ViewModelConnector x:Name="NoUsableAppNextState" Orientation="Right" Tag="NoUsableAppNextState" ToolTip="NoUsableAppNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.55"/>
+
+        </c:RelativePositionPanel>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="Connector_Slash_State" TargetType="{x:Type Control}">
+        <c:RelativePositionPanel Margin="-4">
+            <s:ViewModelConnector x:Name="Top" Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main" c:RelativePositionPanel.RelativePosition="0.5,0"/>
+            <s:ViewModelConnector x:Name="ICCAppSuccessfulNextState" Orientation="Left" Tag="ICCAppSuccessfulNextState" ToolTip="ICCAppSuccessfulNextState"   Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.38"/>
+            <s:ViewModelConnector x:Name="CardNotSmartNextState" Orientation="Left" Tag="CardNotSmartNextState" ToolTip="CardNotSmartNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.55"/>
+            <s:ViewModelConnector x:Name="ICCAppNotUsableNextState" Orientation="Left" Tag="ICCAppNotUsableNextState" ToolTip="ICCAppNotUsableNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.74"/>
+            <s:ViewModelConnector x:Name="NoSuitableICCAppsNextState" Orientation="Left" Tag="NoSuitableICCAppsNextState" ToolTip="NoSuitableICCAppsNextState"  Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.92"/>
+
+            <s:ViewModelConnector x:Name="ICCAppLevelErrorNextState" Orientation="Right"  Tag="ICCAppLevelErrorNextState" ToolTip="ICCAppLevelErrorNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.38"/>
+            <s:ViewModelConnector x:Name="ICCHardwareLevelErrorNextState" Orientation="Right" Tag="ICCHardwareLevelErrorNextState" ToolTip="ICCHardwareLevelErrorNextState"  Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.55"/>
+            <s:ViewModelConnector x:Name="ProcessNotPerformNextState" Orientation="Right" Tag="ProcessNotPerformNextState" ToolTip="ProcessNotPerformNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.74"/>
+
+
+        </c:RelativePositionPanel>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="Connector_Query_State" TargetType="{x:Type Control}">
+        <c:RelativePositionPanel Margin="-4">
+            <s:ViewModelConnector x:Name="Top" Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main" c:RelativePositionPanel.RelativePosition="0.5,0"/>
+            <s:ViewModelConnector x:Name="NextState" Orientation="Left" Tag="NextState" ToolTip="NextState"   Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.38"/>
+         
+        </c:RelativePositionPanel>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="Connector_Semicolon_State" TargetType="{x:Type Control}">
+        <c:RelativePositionPanel Margin="-4">
+            <s:ViewModelConnector x:Name="Top" Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main" c:RelativePositionPanel.RelativePosition="0.5,0"/>
+            <s:ViewModelConnector x:Name="GoodNextState" Orientation="Left" Tag="GoodNextState" ToolTip="GoodNextState"   Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.38"/>
+
+            <s:ViewModelConnector x:Name="ProcessingNotPerformedNextState" Orientation="Right" Tag="ProcessingNotPerformedNextState" ToolTip="ProcessingNotPerformedNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.38"/>
+
+        </c:RelativePositionPanel>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="Connector_e000_State" TargetType="{x:Type Control}">
+        <c:RelativePositionPanel Margin="-4">
+            <s:ViewModelConnector x:Name="Top" Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main" c:RelativePositionPanel.RelativePosition="0.5,0"/>
+            <s:ViewModelConnector x:Name="SuccessfulNextstate" Orientation="Left" Tag="SuccessfulNextstate" ToolTip="SuccessfulNextstate" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.38"/>
+            <s:ViewModelConnector x:Name="FailedContactingNextState" Orientation="Left" Tag="FailedContactingNextState" ToolTip="FailedContactingNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.55"/>
+            <s:ViewModelConnector x:Name="NoAppAvaliableNextState" Orientation="Left" Tag="NoAppAvaliableNextState" ToolTip="NoAppAvaliableNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.74"/>
+
+            <s:ViewModelConnector x:Name="EMVAppLevelErrorNextState" Orientation="Right" Tag="EMVAppLevelErrorNextState" ToolTip="EMVAppLevelErrorNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.38"/>
+            <s:ViewModelConnector x:Name="EMVHardwareErrorNextState" Orientation="Right" Tag="EMVHardwareErrorNextState" ToolTip="EMVHardwareErrorNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.55"/>
+
+        </c:RelativePositionPanel>
+    </ControlTemplate>
+    
+    <ControlTemplate x:Key="Connector_e001_State" TargetType="{x:Type Control}">
+        <c:RelativePositionPanel Margin="-4">
+            <s:ViewModelConnector x:Name="Top" Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main" c:RelativePositionPanel.RelativePosition="0.5,0"/>
+            <s:ViewModelConnector x:Name="AppSelectedNextstate" Orientation="Left" Tag="AppSelectedNextstate" ToolTip="AppSelectedNextstate" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.38"/>
+            <s:ViewModelConnector x:Name="OneAppAvaliableNextState" Orientation="Left" Tag="OneAppAvaliableNextState" ToolTip="OneAppAvaliableNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.55"/>
+            <s:ViewModelConnector x:Name="NoAppAvaliableNextState" Orientation="Left" Tag="NoAppAvaliableNextState" ToolTip="NoAppAvaliableNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.74"/>
+
+            <s:ViewModelConnector x:Name="TimeoutNextState" Orientation="Right" Tag="TimeoutNextState" ToolTip="TimeoutNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.38"/>
+            <s:ViewModelConnector x:Name="CancelNextState" Orientation="Right" Tag="CancelNextState" ToolTip="CancelNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.55"/>
+
+        </c:RelativePositionPanel>
+    </ControlTemplate>
+  
+    <ControlTemplate x:Key="Connector_e002_State" TargetType="{x:Type Control}">
+        <c:RelativePositionPanel Margin="-4">
+            <s:ViewModelConnector x:Name="Top" Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main" c:RelativePositionPanel.RelativePosition="0.5,0"/>
+            <s:ViewModelConnector x:Name="AppStartedNextstate" Orientation="Left" Tag="AppStartedNextstate" ToolTip="AppStartedNextstate" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.38"/>
+            <s:ViewModelConnector x:Name="AppNotStartedNextState" Orientation="Left" Tag="AppNotStartedNextState" ToolTip="AppNotStartedNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.55"/>
+
+            <s:ViewModelConnector x:Name="EMVAppErrorNextState" Orientation="Right" Tag="EMVAppErrorNextState" ToolTip="EMVAppErrorNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.38"/>
+            <s:ViewModelConnector x:Name="EMVHardwareErrorNextState" Orientation="Right" Tag="EMVHardwareErrorNextState" ToolTip="EMVHardwareErrorNextState" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.55"/>
+
+        </c:RelativePositionPanel>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="Connector_e003_State" TargetType="{x:Type Control}">
+        <c:RelativePositionPanel Margin="-4">
+            <s:ViewModelConnector x:Name="Top" Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main" c:RelativePositionPanel.RelativePosition="0.5,0"/>
+            <s:ViewModelConnector x:Name="Nextstate" Orientation="Left" Tag="Nextstate" ToolTip="Nextstate" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.38"/>       
+        </c:RelativePositionPanel>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="Connector_e004_State" TargetType="{x:Type Control}">
+        <c:RelativePositionPanel Margin="-4">
+            <s:ViewModelConnector x:Name="Top" Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main" c:RelativePositionPanel.RelativePosition="0.5,0"/>
+            <s:ViewModelConnector x:Name="FirstACSuccessfulNextstate" Orientation="Left" Tag="FirstACSuccessfulNextstate" ToolTip="FirstACSuccessfulNextstate"  Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.38"/>
+            <s:ViewModelConnector x:Name="FirstACDeclinedNextstate" Orientation="Left" Tag="FirstACDeclinedNextstate" ToolTip="FirstACDeclinedNextstate" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.55"/>
+            <s:ViewModelConnector x:Name="ChipReferralNextstate" Orientation="Left" Tag="ChipReferralNextstate" ToolTip="ChipReferralNextstate" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.74"/>
+            <s:ViewModelConnector x:Name="NoAppStartedNextstate" Orientation="Left" Tag="NoAppStartedNextstate" ToolTip="NoAppStartedNextstate" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.92"/>
+
+            <s:ViewModelConnector x:Name="EMVAppErrorNextstate" Orientation="Right"  Tag="EMVAppErrorNextstate" ToolTip="EMVAppErrorNextstate" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.38"/>
+            <s:ViewModelConnector x:Name="EMVHardwareErrorNextstate" Orientation="Right" Tag="EMVHardwareErrorNextstate" ToolTip="EMVHardwareErrorNextstate" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.55"/>
+            <s:ViewModelConnector x:Name="EMVSequenceErrorNextstate" Orientation="Right" Tag="EMVSequenceErrorNextstate" ToolTip="EMVSequenceErrorNextstate" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.74"/>
+          
+        </c:RelativePositionPanel>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="Connector_e005_State" TargetType="{x:Type Control}">
+        <c:RelativePositionPanel Margin="-4">
+            <s:ViewModelConnector x:Name="Top" Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main" c:RelativePositionPanel.RelativePosition="0.5,0"/>
+            <s:ViewModelConnector x:Name="SecondACSuccessfulNextstate" Orientation="Left" Tag="SecondACSuccessfulNextstate" ToolTip="SecondACSuccessfulNextstate"  Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.38"/>
+            <s:ViewModelConnector x:Name="EMVAppErrorNextstate" Orientation="Left" Tag="EMVAppErrorNextstate" ToolTip="EMVAppErrorNextstate" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="0,0.55"/>
+
+            <s:ViewModelConnector x:Name="EMVHardwareErrorNextstate" Orientation="Right"  Tag="EMVHardwareErrorNextstate" ToolTip="EMVHardwareErrorNextstate" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.38"/>
+            <s:ViewModelConnector x:Name="EMVSequenceErrorNextstate" Orientation="Right" Tag="EMVSequenceErrorNextstate" ToolTip="EMVSequenceErrorNextstate" Height="10" Width="12" c:RelativePositionPanel.RelativePosition="1,0.55"/>
+           
+        </c:RelativePositionPanel>
+    </ControlTemplate>
+
+
+
+    <ControlTemplate x:Key="Connector_Pointer_State" TargetType="{x:Type Control}">
+        <c:RelativePositionPanel Margin="-4">
+            <s:ViewModelConnector x:Name="Top" Orientation="Top" Height="12" Width="30" Tag="Main"  ToolTip="Main" c:RelativePositionPanel.RelativePosition="0.5,0"/>
+        </c:RelativePositionPanel>
+    </ControlTemplate>
+
+
+    <!-- ResizeDecorator Default Template -->
+    <ControlTemplate x:Key="ResizeDecoratorTemplate" TargetType="{x:Type Control}">
+        <Grid Opacity="0.7" SnapsToDevicePixels="true" Background="Gray">
+            <c:ResizeThumb Height="3" Cursor="SizeNS" Margin="0 -3 0 0" 
+                     VerticalAlignment="Top" HorizontalAlignment="Stretch"/>
+            <c:ResizeThumb Width="3" Cursor="SizeWE" Margin="-3 0 0 0" 
+                     VerticalAlignment="Stretch" HorizontalAlignment="Left"/>
+            <c:ResizeThumb Width="3" Cursor="SizeWE" Margin="0 0 -3 0" 
+                     VerticalAlignment="Stretch" HorizontalAlignment="Right"/>
+            <c:ResizeThumb Height="3" Cursor="SizeNS" Margin="0 0 0 -4"
+                     VerticalAlignment="Bottom" HorizontalAlignment="Stretch"/>
+            <c:ResizeThumb Width="7" Height="7" Cursor="SizeNWSE" Margin="-6 -6 0 0"
+                     VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <c:ResizeThumb Width="7" Height="7" Cursor="SizeNESW" Margin="0 -6 -6 0"
+                     VerticalAlignment="Top" HorizontalAlignment="Right"/>
+            <c:ResizeThumb Width="7" Height="7" Cursor="SizeNESW" Margin="-6 0 0 -6"
+                     VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
+            <c:ResizeThumb Width="7" Height="7" Cursor="SizeNWSE" Margin="0 0 -6 -6"
+                     VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
+        </Grid>
+    </ControlTemplate>
+
+    <!-- DragThumb Default Template -->
+    <Style TargetType="{x:Type c:DragThumb}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type c:DragThumb}">
+                    <Rectangle Fill="Transparent"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- DesignerItem Style -->
+    <Style TargetType="{x:Type s:ViewModelDesignerItem}">
+        <Setter Property="MinWidth" Value="10"/>
+        <Setter Property="MinHeight" Value="10"/>
+        <Setter Property="SnapsToDevicePixels" Value="True"/>        
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type s:ViewModelDesignerItem}">
+                    <Grid DataContext="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                          ContextMenu="{StaticResource DesignerItemContextMenu}">
+                        <!-- PART_DragThumb -->
+                        <c:DragThumb x:Name="PART_DragThumb" 
+                                     Cursor="Hand"/>
+                        <!-- PART_ResizeDecorator -->
+                        <Control x:Name="PART_ResizeDecorator" 
+                                 Visibility="Collapsed"
+                                 Template="{StaticResource ResizeDecoratorTemplate}"/>
+                        <!-- PART_ContentPresenter -->
+                        <ContentPresenter x:Name="PART_ContentPresenter"
+                                          HorizontalAlignment="Stretch"
+                                          VerticalAlignment="Stretch"
+                                          Content="{TemplateBinding ContentControl.Content}"
+                                          Margin="{TemplateBinding ContentControl.Padding}"/>
+                        <!-- PART_ConnectorDecorator -->
+                        <Control x:Name="PART_ConnectorDecorator"
+                                 Visibility="Hidden"
+                                 Template="{StaticResource ConnectorDecoratorTemplate}"/>
+
+                        <!-- AState_ConnectorDecorator -->
+                        <Control x:Name="AState_ConnectorDecorator"
+                                 Visibility="Hidden"
+                                 Template="{StaticResource Connector_A_State}"/>
+                        <!-- BState_ConnectorDecorator -->
+                        <Control x:Name="BState_ConnectorDecorator"
+                                 Visibility="Hidden"
+                                 Template="{StaticResource Connector_B_State}"/>
+                        <!-- DState_ConnectorDecorator -->
+                        <Control x:Name="DState_ConnectorDecorator"
+                                 Visibility="Hidden"
+                                 Template="{StaticResource Connector_D_State}"/>
+                        <!-- EState_ConnectorDecorator -->
+                        <Control x:Name="EState_ConnectorDecorator"
+                                 Visibility="Hidden"
+                                 Template="{StaticResource Connector_E_State}"/>
+                        <!-- FState_ConnectorDecorator -->
+                        <Control x:Name="FState_ConnectorDecorator"
+                                 Visibility="Hidden"
+                                 Template="{StaticResource Connector_F_State}"/>
+                        <!-- HState_ConnectorDecorator -->
+                        <Control x:Name="HState_ConnectorDecorator"
+                                 Visibility="Hidden"
+                                 Template="{StaticResource Connector_H_State}"/>
+                        <!-- IState_ConnectorDecorator -->
+                        <Control x:Name="IState_ConnectorDecorator"
+                                 Visibility="Hidden"
+                                 Template="{StaticResource Connector_I_State}"/>
+                        <!-- JState_ConnectorDecorator -->
+                        <Control x:Name="JState_ConnectorDecorator"
+                                 Visibility="Hidden"
+                                 Template="{StaticResource Connector_J_State}"/>
+                        <!-- KState_ConnectorDecorator -->
+                        <Control x:Name="KState_ConnectorDecorator"
+                                 Visibility="Hidden"
+                                 Template="{StaticResource Connector_K_State}"/>
+                        <!-- kState_ConnectorDecorator -->
+                        <Control x:Name="kState_ConnectorDecorator"
+                                 Visibility="Hidden"
+                                 Template="{StaticResource Connector_k_State}"/>
+                        <!-- WState_ConnectorDecorator -->
+                        <Control x:Name="WState_ConnectorDecorator"
+                                 Visibility="Hidden"
+                                 Template="{StaticResource Connector_W_State}"/>
+                        <!-- XState_ConnectorDecorator -->
+                        <Control x:Name="XState_ConnectorDecorator"
+                                 Visibility="Hidden"
+                                 Template="{StaticResource Connector_X_State}"/>
+                        <!-- YState_ConnectorDecorator -->
+                        <Control x:Name="YState_ConnectorDecorator"
+                                 Visibility="Hidden"
+                                 Template="{StaticResource Connector_Y_State}"/>
+                        <!-- CASState_ConnectorDecorator -->
+                        <Control x:Name="CASState_ConnectorDecorator"
+                                 Visibility="Hidden"
+                                 Template="{StaticResource Connector_CAS_State}"/>                       
+                        <!-- bState_ConnectorDecorator -->
+                        <Control x:Name="bState_ConnectorDecorator"
+                                 Visibility="Hidden"
+                                 Template="{StaticResource Connector_b_State}"/>                        
+                        <!-- plusState_ConnectorDecorator -->
+                        <Control x:Name="PlusState_ConnectorDecorator"
+                                 Visibility="Hidden"
+                                 Template="{StaticResource Connector_Plus_State}"/>
+                        <!-- CommaState_ConnectorDecorator -->
+                        <Control x:Name="CommaState_ConnectorDecorator"
+                                 Visibility="Hidden"
+                                 Template="{StaticResource Connector_Comma_State}"/>                        
+                        <!-- DashState_ConnectorDecorator -->
+                        <Control x:Name="DashState_ConnectorDecorator"
+                                 Visibility="Hidden"
+                                 Template="{StaticResource Connector_Dash_State}"/>
+                        <!-- DotState_ConnectorDecorator -->
+                        <Control x:Name="DotState_ConnectorDecorator"
+                                 Visibility="Hidden"
+                                 Template="{StaticResource Connector_Dot_State}"/>
+                        <!-- SlashState_ConnectorDecorator -->
+                        <Control x:Name="SlashState_ConnectorDecorator"
+                                 Visibility="Hidden"
+                                 Template="{StaticResource Connector_Slash_State}"/>
+                        <!-- QueryState_ConnectorDecorator -->
+                        <Control x:Name="QueryState_ConnectorDecorator"
+                                 Visibility="Hidden"
+                                 Template="{StaticResource Connector_Query_State}"/>
+                        <!-- SemicolonState_ConnectorDecorator -->
+                        <Control x:Name="SemicolonState_ConnectorDecorator"
+                                 Visibility="Hidden"
+                                 Template="{StaticResource Connector_Semicolon_State}"/>
+                        <!-- rState_ConnectorDecorator -->
+                        <Control x:Name="rState_ConnectorDecorator"
+                                 Visibility="Hidden"
+                                 Template="{StaticResource Connector_r_State}"/>
+                        <!-- e000State_ConnectorDecorator -->
+                        <Control x:Name="e000State_ConnectorDecorator"
+                                 Visibility="Hidden"
+                                 Template="{StaticResource Connector_e000_State}"/>
+                        <!-- e001State_ConnectorDecorator -->
+                        <Control x:Name="e001State_ConnectorDecorator"
+                                 Visibility="Hidden"
+                                 Template="{StaticResource Connector_e001_State}"/>
+                        <!-- e002State_ConnectorDecorator -->
+                        <Control x:Name="e002State_ConnectorDecorator"
+                                 Visibility="Hidden"
+                                 Template="{StaticResource Connector_e002_State}"/>
+                        <!-- e003State_ConnectorDecorator -->
+                        <Control x:Name="e003State_ConnectorDecorator"
+                                 Visibility="Hidden"
+                                 Template="{StaticResource Connector_e003_State}"/>
+                        <!-- e004State_ConnectorDecorator -->
+                        <Control x:Name="e004State_ConnectorDecorator"
+                                 Visibility="Hidden"
+                                 Template="{StaticResource Connector_e004_State}"/>
+                        <!-- e005State_ConnectorDecorator -->
+                        <Control x:Name="e005State_ConnectorDecorator"
+                                 Visibility="Hidden"
+                                 Template="{StaticResource Connector_e005_State}"/>
+
+
+                        <!-- PointerState_ConnectorDecorator -->
+                        <Control x:Name="pointerState_ConnectorDecorator"
+                                 Visibility="Hidden"
+                                 Template="{StaticResource Connector_Pointer_State}"/>
+
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <DataTrigger Value="True" Binding="{Binding RelativeSource={RelativeSource Self},Path=IsGroup}">
+                            <Setter TargetName="PART_DragThumb" Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Value="True" Binding="{Binding RelativeSource={RelativeSource Self},Path=IsSelected}"/>
+                                <Condition Value="{x:Static sys:Guid.Empty}" Binding="{Binding RelativeSource={RelativeSource Self},Path=ParentID}"/>
+                            </MultiDataTrigger.Conditions>
+                            <Setter TargetName="PART_ResizeDecorator" Property="Visibility" Value="Visible"/>
+                        </MultiDataTrigger>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter TargetName="PART_ConnectorDecorator" Property="Visibility" Value="Visible"/>
+                        </Trigger>
+                        <DataTrigger Value="True" Binding="{Binding RelativeSource={RelativeSource Self},Path=IsDragConnectionOver}">
+                            <Setter TargetName="PART_ConnectorDecorator" Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                        <DataTrigger Value="True" Binding="{Binding RelativeSource={RelativeSource Self},Path=IsGroup}">
+                            <Setter TargetName="PART_ConnectorDecorator" Property="Visibility" Value="Hidden"/>
+                        </DataTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

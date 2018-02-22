@@ -1,0 +1,14 @@
+2016-01-07 14:05:07,203 [1] INFO  [ATMDesigner.UI.View.MainWindow]   ATMDesigner Closed !
+
+2016-01-07 14:05:10,829 [1] INFO  [ATMDesigner.UI.View.MainWindow]   GetProjectList() Start.!
+
+2016-01-07 14:05:12,552 [1] INFO  [ATMDesigner.UI.View.MainWindow]   GetTransactionList() start.!
+
+2016-01-07 14:05:12,710 [1] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   UploadStateList() Start!
+
+2016-01-07 14:05:14,277 [1] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   UploadStateList() DB 'den Upload Baþarýlý bir þekilde tamamlandý,State Tiplerine göre classlar oluþturuldu
+
+2016-01-07 14:05:14,285 [1] INFO  [ATMDesigner.UI.ViewModelDesignerCanvas]   LoadSerializedDataFromFile() Start! XMLPath:C:\ATM\ATMManagment\ATMDesignerXml\AnadoluBank_PinGiriþi.xml
+
+2016-01-07 14:13:16,742 [1] INFO  [ATMDesigner.UI.View.MainWindow]   ATMDesigner Closed !
+

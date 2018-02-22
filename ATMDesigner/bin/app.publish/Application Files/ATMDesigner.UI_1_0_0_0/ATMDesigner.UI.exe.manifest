@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="ATMDesigner.UI.exe" version="1.0.0.0" publicKeyToken="fcecb90e3326a86e" language="neutral" processorArchitecture="x86" type="win32" />
+  <description asmv2:iconFile="terminal.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="ATMDesigner.UI" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
+    <commandLine file="ATMDesigner.UI.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the 
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward 
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Oracle.DataAccess" version="4.112.1.2" publicKeyToken="89B483F429C47342" language="neutral" processorArchitecture="x86" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ATMDesigner.Business.dll" size="9216">
+      <assemblyIdentity name="ATMDesigner.Business" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>/tG3ZofqiGfCsSCxtfKvAZf7kdOoy+A/gGYPueLoy/w=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ATMDesigner.Common.dll" size="8704">
+      <assemblyIdentity name="ATMDesigner.Common" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>4mUsxRGrsZQi9ZbtV4VWSWMIGzgLKZjjMlLA/jNzMIQ=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ATMDesigner.Repository.dll" size="11264">
+      <assemblyIdentity name="ATMDesigner.Repository" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>/U0+uPePJuhA2CrUzuMB82F1qVLlOCL3zSSYRimiZtY=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ATMDesigner.UI.exe" size="892416">
+      <assemblyIdentity name="ATMDesigner.UI" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>knJd6gi1XDZozLya1olB8G+UpQIZI6OuY2adVn1A+RU=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="log4net.dll" size="301056">
+      <assemblyIdentity name="log4net" version="1.2.13.0" publicKeyToken="669E0DDF0BB1AA2A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>zm7k/ceDpb+QXyQBeKyW6ut+3iL/4GoGuhec0aBEK9M=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="System.Windows.Interactivity.dll" size="39936">
+      <assemblyIdentity name="System.Windows.Interactivity" version="4.0.0.0" publicKeyToken="31BF3856AD364E35" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>SqzoyKMwroQpzYzBtoBAdtOp/9YzRw+R/Ta90lu1eHY=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WPFToolkit.dll" size="467288">
+      <assemblyIdentity name="WPFToolkit" version="3.5.40128.1" publicKeyToken="31BF3856AD364E35" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>rvn8u4dPyC4VHjInkzAGH48ip3wF9YOgy15WlmVKxFY=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Xceed.Wpf.Toolkit.dll" size="998400">
+      <assemblyIdentity name="Xceed.Wpf.Toolkit" version="2.3.0.0" publicKeyToken="3E4669D2F30244F4" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>ruxFMSt1vcivOzWOEBdkmqAkuhbw4triM7ZBfFPcluA=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="ATMDesigner.UI.exe.config" size="1700">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>LFPar0VsOiJdnMp7G7+UEp0f01hbA+tG+Wld1WHFfUg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="terminal.ico" size="169795">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>WW6hawT8liaGWU982eM0GededshUvf+Ay4TSKVujls8=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=CARDTEK\Lezgin.Aksoy" issuerKeyHash="faf7103e3b18d4d9060afa9ea126cecb1fe03e4e" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>e5Ag1TcVIPcJ6M+mNiW5qNRvHAxOPGxN9fepFpnN7ZI=</DigestValue></Reference></SignedInfo><SignatureValue>yyEtFDpLkhjBXTW2WzW2qxQHK6lQ6Hg0asHk+DcFF/BvrLHTonG+DTL9M5xWZYZMZSDN6VTr0On9lxLOFD7YLDon5618VAkPuWKVOfmAlQzoGtDV4JB+ay5NNAiweeULsZ6PC57qjCpyqlaopT/ObFojY5S2H9Paeum5tf7L3tE=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>91JEbZohgbu7Har23FsKPRtvGi1PKZlqn20sVAt9+R30Q1WsAiPXyulAaOZ4r2auDTvdV0ZjbWJ+pQOPRuw7hoeVtlYWMKdQJitSEOpbO7HLIUQi+kpgM8Rc5HAur7Neb8E4f5Y3WR0APa0/5ClxCIALg9mGPezIUxjCmGOuFkU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="92edcd9916a9f7f54d6c3c4e0c1c6fd4a8b92536a6cfe809f7201537d520907b" Description="" Url=""><as:assemblyIdentity name="ATMDesigner.UI.exe" version="1.0.0.0" publicKeyToken="fcecb90e3326a86e" language="neutral" processorArchitecture="x86" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=CARDTEK\Lezgin.Aksoy</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>GhC+MhwlOUpVnap/XtmFhln3Iq+A5wPMBRd0DxJ1ZM0=</DigestValue></Reference></SignedInfo><SignatureValue>OecmjXAo8DwIBdDvthqYyzCsMRI9Sbr9p018FRBlf7zikLcR6Q5GwPeXmuEkv9h+TKE+jk7Hv4mM9CmnLg2HD+ruu7QghYG8Ml124iFoYjZPEg/+pHe4Tw9WAJl/lIM1vhroM/2TANLPC7X3sMg29iDTph+tat/daHS8hnEY80M=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>91JEbZohgbu7Har23FsKPRtvGi1PKZlqn20sVAt9+R30Q1WsAiPXyulAaOZ4r2auDTvdV0ZjbWJ+pQOPRuw7hoeVtlYWMKdQJitSEOpbO7HLIUQi+kpgM8Rc5HAur7Neb8E4f5Y3WR0APa0/5ClxCIALg9mGPezIUxjCmGOuFkU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB6TCCAVKgAwIBAgIQMs839d9c159DX316JT0OKTANBgkqhkiG9w0BAQsFADAzMTEwLwYDVQQDHigAQwBBAFIARABUAEUASwBcAEwAZQB6AGcAaQBuAC4AQQBrAHMAbwB5MB4XDTE1MDkxODA5MDAwMloXDTE2MDkxNzE1MDAwMlowMzExMC8GA1UEAx4oAEMAQQBSAEQAVABFAEsAXABMAGUAegBnAGkAbgAuAEEAawBzAG8AeTCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEA91JEbZohgbu7Har23FsKPRtvGi1PKZlqn20sVAt9+R30Q1WsAiPXyulAaOZ4r2auDTvdV0ZjbWJ+pQOPRuw7hoeVtlYWMKdQJitSEOpbO7HLIUQi+kpgM8Rc5HAur7Neb8E4f5Y3WR0APa0/5ClxCIALg9mGPezIUxjCmGOuFkUCAwEAATANBgkqhkiG9w0BAQsFAAOBgQAv7xrGMzmNIcvrXbuXDshveZDxZXt3OrnXv1QyR0dXRpD8VQMP6v45UADKC5i5slg/S8erC2/fsCOjb6sPSOeStN5CGdT2eMui8pXSJA5UzPisUI03Au//hqldP12Ev+wm6soEentMv176oaW+whLlPv9PFbeJKN2mX9Q/u8k+fA==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

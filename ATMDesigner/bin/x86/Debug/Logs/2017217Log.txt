@@ -1,0 +1,16 @@
+2017-02-17 17:26:42,444 [1] ERROR [ATMDesigner.UI.ViewModelDesignerCanvas]   UpdateBrandAndConfig() Hata.! Brand ve Config update iþlemlerinde bir hata oluþtu. Object reference not set to an instance of an object.
+
+2017-02-17 17:26:50,176 [1] INFO  [ATMDesigner.UI.View.MainWindow]   GetProjectList() Start.!
+
+2017-02-17 17:26:50,192 [1] ERROR [ATMDesigner.UI.View.MainWindow]   GetProjectList() Error.! Object reference not set to an instance of an object.
+
+2017-02-17 17:26:51,972 [1] INFO  [ATMDesigner.UI.View.MainWindow]   GetProjectList() Start.!
+
+2017-02-17 17:26:51,982 [1] ERROR [ATMDesigner.UI.View.MainWindow]   GetProjectList() Error.! Object reference not set to an instance of an object.
+
+2017-02-17 17:26:52,706 [1] INFO  [ATMDesigner.UI.View.MainWindow]   GetProjectList() Start.!
+
+2017-02-17 17:26:52,715 [1] ERROR [ATMDesigner.UI.View.MainWindow]   GetProjectList() Error.! Object reference not set to an instance of an object.
+
+2017-02-17 17:26:58,078 [1] INFO  [ATMDesigner.UI.View.MainWindow]   ATMDesigner Closed !
+

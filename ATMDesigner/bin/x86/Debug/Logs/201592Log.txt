@@ -1,0 +1,4 @@
+2015-09-02 14:35:08,978 [1] ERROR [ATMDesigner.UI.ViewModelDesignerCanvas]   UpdateBrandAndConfig() Hata.! Brand ve Config update iþlemlerinde bir hata oluþtu. Object reference not set to an instance of an object.
+
+2015-09-02 14:35:14,172 [1] INFO  [ATMDesigner.UI.View.MainWindow]   ATMDesigner Closed !
+

@@ -1,0 +1,8 @@
+C:\ATM\ATMManagment\atmprofiler_new\ATMDesigner.Common\bin\Debug\ATMDesigner.Common.dll
+C:\ATM\ATMManagment\atmprofiler_new\ATMDesigner.Common\bin\Debug\ATMDesigner.Common.pdb
+C:\ATM\ATMManagment\atmprofiler_new\ATMDesigner.Common\bin\Debug\System.Windows.Interactivity.dll
+C:\ATM\ATMManagment\atmprofiler_new\ATMDesigner.Common\bin\Debug\Xceed.Wpf.Toolkit.dll
+C:\ATM\ATMManagment\atmprofiler_new\ATMDesigner.Common\bin\Debug\WPFToolkit.dll
+C:\ATM\ATMManagment\atmprofiler_new\ATMDesigner.Common\obj\Debug\ATMDesigner.Common.csprojResolveAssemblyReference.cache
+C:\ATM\ATMManagment\atmprofiler_new\ATMDesigner.Common\obj\Debug\ATMDesigner.Common.dll
+C:\ATM\ATMManagment\atmprofiler_new\ATMDesigner.Common\obj\Debug\ATMDesigner.Common.pdb
